@@ -1,0 +1,78 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+\usepackage[backend = biber, 
+            style=apa, 
+            bibstyle=apa,
+            pluralothers=true,
+            hyperref=false,
+            backref=true,
+            backrefstyle=two
+            ]{biblatex}
+
+\usepackage{hyperref}
+\hypersetup{colorlinks, linkcolor={blue}, citecolor={blue}, urlcolor={blue}}
+
+\DeclareCiteCommand{\citedatelink}
+  {\usebibmacro{prenote}}
+  {\printtext[bibhyperref]{\printdate}}
+  {\multicitedelim}
+  {\usebibmacro{postnote}}
+
+\usepackage{geometry}
+\geometry{tmargin = 80pt, 
+          rmargin = 80pt, 
+          lmargin = 80pt, 
+          bmargin = 80pt}
+
+\usepackage{amsmath}
+\usepackage{verbatim}
+\usepackage{wrapfig}
+\usepackage[font=small]{caption}
+
+%\bibliography{ref.bib}
+
+\title{}
+\author{Anvel (Marguerite) de Sainte Marie d'Agneaux}
+\date{}
+
+\begin{document}
+\maketitle
+
+
+\begin{figure}[ht!]
+  \centering
+  \includegraphics[width=0.75\textwidth]{images/}
+  \caption{}
+  \label{fig:}
+\end{figure}
+
+\section{Introduction}\label{sec:intro}
+Briefly introduce the astrophysical situation that you are trying to model and describe the models used in this project.
+
+\section{Implementation}\label{sec:imp}
+Briefly describe how the code was implemented (structure) and what method(s) were used to integrate the equations of motion. 
+
+\section{Results}\label{sec:res}
+Describe your simulation, initial conditions and results. Make plots!
+
+\section{Discussion}\label{sec:dis}
+
+\begin{itemize}
+\item Why did you \emph{need} to perform a numerical simulation to solve this astrophysical problem?
+\item Motivate the validity of the models used in this project. What physical aspects are well captured by them? What are their limitations?
+\item What physical ingredients could be improved / added in order to make the models more \emph{realistic}?
+\end{itemize}
+\begin{singlespace}
+\begin{footnotesize}
+\begin{multicols}{2}
+\setlength{\bibsep}{0pt}
+\bibliography{references}
+
+\end{multicols}
+\end{footnotesize}
+\end{singlespace}
+\end{document}
+
+
+\printbibliography
+\end{document}
