@@ -18,8 +18,9 @@ if __name__ == "__main__": # main program, not executed if you import this file
     os.makedirs(path+'nbody_output', exist_ok=True)
     
     # Initialisation of the model
-    p, v, mp = mkGalaxy2D(n_star_1, M_1, R_1, n_dim) #positions, velocity, particle mass
-    acc = getAcceleration(p, mp, n_dim, n_star_1, G, Rsun) #acceleration
+    p, v, mp = mkGalaxy2D(n_star_1, M_1, R_1, n_dim, G) #positions, velocity, particle mass
+
+    acc = getAcceleration(p, v, mp, n_dim, n_star_1, G, Rsun) #acceleration
 
     # Evolution of the model
     k = 0           #steps

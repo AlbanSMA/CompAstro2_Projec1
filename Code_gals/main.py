@@ -1,12 +1,15 @@
 import os
+import sys
 import matplotlib.pyplot as plt; plt.ion()
 
-from Code_gals.params import *
-from Code_gals.functions.make_gal import mkGalaxy2D, InitialConditions
-from Code_gals.functions.evolve_gal import getAcceleration, leapfrog
-from Code_gals.functions.plots import ini_plots, update_plots
-
 plt.ion()
+sys.path.append("C:\\Users\\User\\Documents\\Documents\\University\\Master_SU\\Year_1\\IIB\\CompAstro\\Projects\\Project1\\Code_gals")
+
+from params import *
+from functions.make_gal import mkGalaxy2D, InitialConditions
+from functions.evolve_gal import getAcceleration, leapfrog
+from functions.plots import ini_plots, update_plots
+
 
 
 if __name__ == "__main__": # main program, not executed if you import this file
