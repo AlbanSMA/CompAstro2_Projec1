@@ -13,8 +13,8 @@ def ini_plots(p, Rg, path):
     ax.set_title("t_step={0}".format(0))
 
     # set lim
-    ax.set_ylim(-10, 10)
-    ax.set_xlim(-10, 10)
+    ax.set_ylim()
+    ax.set_xlim()
 
     f.savefig(path+"nbody_output/img{0:05d}.png".format(0), dpi=300, format='png')
     return f, ax, d0
