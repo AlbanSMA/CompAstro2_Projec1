@@ -32,19 +32,10 @@ def mkGalaxy2D(n_particle, R, M, n_dim, G):
 
     #Velocity
     #calculate the mass inside radius r
-    M_r = np.array([i*(a+1) for a, i in enumerate(mp)])
+    #M_r = np.array([i*(a+1) for a, i in enumerate(mp)])
 
-    v_temp = np.sqrt(G*M_r/abs(r))
-    v[0,:] = v_temp*np.cos(theta)
-    v[1,:] = v_temp*np.sin(theta)
-
-    #Initial kernel smoothing function
-    for j in range(n_particle):
-        r_j = np.sqrt(p[0,j]**2 + p[1,j]**2)
-        r = np.sqrt((p[0,j]-p[0,:])**2 + (p[1,j]-p[1,:]))
-        h = 3
-        q = abs(r - r_j)/h
-        C = 5/(14*np.pi*h**2)
-        W = np.array([(2-a)**3 - 4*(1-a)**3 for a in q<1]+[(2-q)**3 for a in q>=1 and q<2])
-            
-    return p, v, mp, W
+    #v_temp = np.sqrt(G*M_r/abs(r))
+    #v[0,:] = v_temp*np.cos(theta)
+    #v[1,:] = v_temp*np.sin(theta)
+    v[:] = 0
+    return p, v, mp

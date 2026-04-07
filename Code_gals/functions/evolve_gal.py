@@ -10,12 +10,11 @@ def getAcceleration(p, mp, n_dim, n_particle, G, Rg):
     n_dim, n_particle = p.shape
     acc = np.zeros((n_dim, n_particle))
     
-    # calculate the acceleration
+    # Acceleration equation
     # F_j = m_j * sum(i != j) G * m_i/r^3_ji = m_j * a_j
     # So a_j = - sum(i != j) G * m_i/r^3_ji
 
     for j in range(n_particle):
-
         #Calculate the vector directions which are used in the equation
         r_ji_x = p[0,j]-p[0,:]
         r_ji_y = p[1,j]-p[1,:]
