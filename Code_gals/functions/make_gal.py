@@ -39,9 +39,9 @@ def mkGalaxy2D(n_particle, R, M, n_dim, G, x0=0.0, y0=0.0, vx0=0.0, vy0=0.0):
     M_r = np.array([i*(a+1) for a, i in enumerate(mp)])
 
     # get the velocity from that mass and radius r and make it two vectors v_x and v_y in the right directions
-    v_temp = np.sqrt(G*M_r/abs(r))
-    v[0,:] = - v_temp*np.sin(theta)*0
-    v[1,:] = v_temp*np.cos(theta)*0
+    v_temp = 0.4*np.sqrt(G*M_r/abs(r))
+    v[0,:] = - v_temp*np.sin(theta)
+    v[1,:] = v_temp*np.cos(theta)
 
 
     #add the global offsets in position and velocity
