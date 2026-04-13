@@ -17,10 +17,10 @@ def ini_plots(p, n_galaxy_1, Rg, path):
     ax.set_title("t_step={0}".format(0))
 
     # set lim
-    ax.set_ylim(-10, 10)
-    ax.set_xlim(-10, 10)
+    ax.set_ylim(-20, 20)
+    ax.set_xlim(-20, 20)
 
-    f.savefig(path+"nbody_output/img{0:05d}.png".format(0), dpi=300, format='png')
+    f.savefig(path+"nbody_output_highmass/img{0:05d}.png".format(0), dpi=300, format='png')
     return f, ax, d0, d1
 
 
@@ -38,4 +38,5 @@ def update_plots(d0, d1, p, k, n_galaxy_1, Rg, f, ax, path):
     f.canvas.flush_events()
 
     # save image from the simulation to your drive as png
-    f.savefig(path+"nbody_output/img{0:05d}.png".format(k), dpi=300, format='png')
+    f.savefig(path+"nbody_output_highmass/img{0:05d}.png".format(k), dpi=300, format='png')
+    return d0, d1

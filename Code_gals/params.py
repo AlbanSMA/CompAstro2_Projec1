@@ -17,7 +17,7 @@ R_1 = Rg
 
 
 # Galaxy 2
-n_galaxy_2 = 500
+n_galaxy_2 = 1000
 M_2 = 1.54E10*Msun   #Kg
 R_2 = 3.8e17        #Km
 x02 = 15*Rg        #Km

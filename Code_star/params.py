@@ -10,7 +10,7 @@ n_step = 1800
 dt = tau * 0.01
 
 # Galaxy 1
-n_star_1 = 300
+n_star_1 = 2000
 M_1 = Msun
 R_1 = 0.3*Rsun
 
