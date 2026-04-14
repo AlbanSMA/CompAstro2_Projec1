@@ -142,15 +142,60 @@ There are probably ways in which the no loops methods could be improved, but due
 %What happens if the blue galaxy is given a larger mass, closer to that of the red one?
 %5. What are the limitations of this model?
 
-Using the galaxy merger model, I run four different simulations. The parameters used for all of them can be found in \nameref{sec:AppA}. The first one had a Milky Way size galaxy interacting with an extremely low mass galaxy, of only $10^5$ times the mass of the Sun. The second was interacting with a larger galaxy, although still low mass, of about $10^{10}$ the mass of the Sun. The third also included a change in mass, with two galaxies of about equal mass interacting. The last was slightly different in that it included the Milky Way size galaxy and the $10^{10}M_\odot$ ones, but with a head-on collision instead of the offset fly-by the others modelled.
+Using the galaxy merger model, I run four different simulations. The parameters used for all of them can be found in \nameref{sec:AppA}. The first one had a Milky Way size galaxy interacting with an extremely low mass galaxy, of only $10^5$ times the mass of the Sun. The second was interacting with a larger galaxy, although still low mass, of about $10^{10}$ the mass of the Sun. The third also included a change in mass, with two galaxies of about equal mass interacting. The last was slightly different in that it included the Milky Way size galaxy and the $10^{10}M_\odot$ ones, but with a head-on collision instead of the offset fly-by which the others modelled.\newline
 
-\subsection{Extremely Low Mass Galaxy}
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width = 0.3\textwidth]{images/img00133.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00180.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00293.png}
+  \caption{Evolution of the fly-by of an extremely low mass galaxy next to a Milky Way sized galaxy.}
+  \label{fig:extlowmass}
+\end{figure}
 
+As we can see in figure \ref{fig:extlowmass}, the extremely low mass galaxy, which is arriving from the right, slightly above the other galaxy, gets slingshot around the higher mass one. Contrary to what is expected from higher mass galaxies, it does not form a tidal stream, but instead spreads across a half circle and continues on a new, nearly perpendicular trajectory. It seems that if the simulation continued, the lower mass galaxy would become unbound and its individual particle would get ejected along their previous trajectory, in a half circle. This is probably due to the fact that the galaxy is too small and fast to be slowed down by the gravitational pull of the larger galaxy. While the galaxy does slingshot it, no particles trail behind because they are too small and fast to be affected. However, it does break appart because the galaxy itself is not strongly gravitationally bound because it is too small.
 
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width = 0.2\textwidth]{images/img00119.png}
+  \includegraphics[width = 0.2\textwidth]{images/img00139.png} 
+  \includegraphics[width = 0.2\textwidth]{images/img00164.png}
+  \includegraphics[width = 0.2\textwidth]{images/img00278.png}
+  \caption{Evolution of the flyby of a lower mass galaxy next to a Milky-Way sized galaxy.}
+  \label{fig:lowmass}
+\end{figure}
 
+As we can see in figure \ref{fig:lowmass}, the lower mass galaxy is also slingshot by the high mass one when the mass ratio between the two is smaller. However, the lower mass galaxy is still large enough for part of its particles to get pulled into the higher mass one. A tidal stream forms, and while some of the particles continue in their trajectory, some remain in the vicinity of the non-moving galaxy. They are absorbed into it after a time.
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width = 0.3\textwidth]{images/img00107.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00134.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00260.png}
+  \includegraphics[width = 0.45\textwidth]{images/img00315.png}
+  \includegraphics[width = 0.45\textwidth]{images/img00469.png}
+  \caption{Evolution of the flyby of two galaxies of about equal size, both of the size of the Milky Way.}
+  \label{fig:highmass}
+\end{figure}
+
+In figure \ref{fig:highmass}, we can see that the equal mass galaxy interaction is very different. While the moving galaxy originally starts orbiting around the non-moving one, as is visible in the first pannel, it very quickly falls into it. Particles from both galaxies get ejected into higher orbit. Part of the motion of the second galaxy is transferred to the first, such that both galaxies start moving together in the direction the second one was going toward. Ultimately, both galaxies will probably merge into one, moving at a speed depending on the combined speed of both of them when they merged.
+
+\begin{figure}[t!]
+  \centering
+  \includegraphics[width = 0.3\textwidth]{images/img00109.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00117.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00124.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00143.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00167.png}
+  \includegraphics[width = 0.3\textwidth]{images/img00282.png}
+  \caption{Evolution of a lower mass galaxy colliding head on with a galaxy of Milky-Way size.}
+  \label{fig:nooffset}
+\end{figure}
+
+Finally, the last simulation can be seen in figure \ref{fig:nooffset}. In this simulation, a lower mass galaxy collides head on with a higher mass one. While the interaction begins in much the same way as the similar mass ration interaction with an offset, it does not continue similarly. The lower mass galaxy is slingshot into a different direction, and is ejected into an arc which resemble more the extremely low mass galaxy interaction. This is however where the resemblance stops, as this arc is dispersed into a cloud of unbound particles. It seems that a higher proportion of them are absorbed into the non-moving galaxy, but on a higher orbit than in the other simulation with a similar mass ratio.
 
 \subsection{Stellar Formation}
-Due to a first misunderstanding as to how the smoothing kernels were supposed to work, and a lack of time to repair the code once the misunderstanding was resolved, the stellar formation model did not work. The particles stayed mostly stationary with accelerations of values around $10^{-63}$, far too small compared to what they should have been. 
+Due to a first misunderstanding as to how the smoothing kernels were supposed to work, and a lack of time to repair the code once the misunderstanding was resolved, the stellar formation model did not work. The particles stayed mostly stationary with accelerations of values around $10^{-63}$, far too small compared to what they should have been. This is probably due to the fact that at first, instead of calculating the smoothing kernel for every points in space as a function of all particles, then applying it to the particle of interest, it was calculated at only the points in space where the particles were. This caused mutliple problems, which ultimately led to the model not working.
 
 \section{Discussion}\label{sec:dis}
 As mentioned in the \nameref{sec:intro}, numerical simulations are necessary to understand phenomenons which can not be observed in their entirety and are too complex for analytical solutions. Although quite basic, the simulations in this report already represent the phenomenons they model quite well. 
@@ -214,7 +259,7 @@ In conclusion, these simulations both are an accurate model of the astrophysical
  Galaxy 2 & \\
  $N_2$ & 500\\
  $M_2$ & $1.54\cdot10^10\cdot M_\odot$\\
- $R_2$ & $3.8\cdot 10^{10}$\\
+ $R_2$ & $3.8\cdot 10^{17}$\\
  $x_{0,2}$ & $15\cdot R_g$\\
  $y_{0,2}$ & $2.5\cdot R_g$\\
  $v_{x_0, 2}$ & $\frac{-R_g}{2\cdot\tau}$\\
@@ -256,8 +301,8 @@ In conclusion, these simulations both are an accurate model of the astrophysical
  $N_2$ & 500\\
  $M_2$ & $1.54\cdot10^{10}\cdot M_\odot$\\
  $R_2$ & $3.8\cdot 10^{17}$\\
- $x_{0,2}$ & 0\\
- $y_{0,2}$ & $2.5\cdot R_g$\\
+ $x_{0,2}$ & $15\cdot R_g$\\
+ $y_{0,2}$ & 0\\
  $v_{x_0, 2}$ & $\frac{-R_g}{2\cdot\tau}$\\
  $v_{y_0, 2}$ & 0\\
 \hline

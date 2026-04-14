@@ -18,10 +18,10 @@ R_1 = Rg
 
 # Galaxy 2
 n_galaxy_2 = 500
-M_2 = 1.54E5*Msun   #Kg
+M_2 = 1.54e10*Msun   #Kg
 R_2 = 3.8e17        #Km
 x02 = 15*Rg        #Km
-y02 = 2.5*Rg        #Km
+y02 = 0        #Km
 vx02 = -Rg/(2*tau)        #Km/s
 vy02 = 0       #Km/s
 
