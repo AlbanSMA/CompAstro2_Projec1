@@ -96,6 +96,9 @@ def getKernel(n_particle, n_dim, p, h, C):
     return W
 
 def getdW(n_particle, n_dim, p, h, C):
+    """Get the gradient of the smoothing kernel accross space for 
+    all particles (n_particle) in every dimension (n_dim) as a function 
+    of their position in space p and the constants h and C."""
     dW = np.zeros((n_particle, n_dim, n_particle))
     dr = np.zeros((n_particle*n_dim*n_particle))
 
