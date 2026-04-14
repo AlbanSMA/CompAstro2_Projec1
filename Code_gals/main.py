@@ -15,7 +15,7 @@ from functions.plots import ini_plots, update_plots
 t1 = time.time()
 # Create output subfolder to store snapshots from the simulation
 path = "C:\\Users\\User\\Documents\\Documents\\University\\Master_SU\\Year_1\\IIB\\CompAstro\\Projects\\Project1\\Plots\\Plots_gal\\"
-os.makedirs(path+'nbody_output_highmass', exist_ok=True)
+os.makedirs(path+'nbody_output_lowmass', exist_ok=True)
     
 # Initialisation of the model
 p, v, mp = InitialConditions(n_galaxy_1, n_galaxy_2, M_1, M_2, R_1, R_2, x02, y02, vx02, vy02, n_dim, G, mkGalaxy2D) #positions, velocity, particle mass
@@ -32,7 +32,7 @@ for tt in range(1, n_step):
 
     # Update the plots with the new particle positions
     # to save some time, only update the plot every 4 iterations
-    if(tt%4 == 0):
+    if(tt%20 == 0):
         d0, d1 = update_plots(d0, d1, p, k, n_galaxy_1, Rg, f, ax, path)
         plots.append((d0,d1))
         k += 1
