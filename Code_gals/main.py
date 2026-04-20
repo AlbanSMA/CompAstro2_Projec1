@@ -15,7 +15,7 @@ from functions.plots import ini_plots, update_plots
 t1 = time.time()
 # Create output subfolder to store snapshots from the simulation
 path = "C:\\Users\\User\\Documents\\Documents\\University\\Master_SU\\Year_1\\IIB\\CompAstro\\Projects\\Project1\\Plots\\Plots_gal\\"
-os.makedirs(path+'nbody_output_offset', exist_ok=True)
+os.makedirs(path+'tst', exist_ok=True)
     
 # Initialisation of the model
 p, v, mp = InitialConditions(n_galaxy_1, n_galaxy_2, M_1, M_2, R_1, R_2, x02, y02, vx02, vy02, n_dim, G, mkGalaxy2D) #positions, velocity, particle mass

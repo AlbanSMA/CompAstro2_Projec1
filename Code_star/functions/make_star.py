@@ -32,10 +32,19 @@ def mkStarD(n_particle, R, M, n_dim, G):
 
     #Velocity
     #calculate the mass inside radius r
-    #M_r = np.array([i*(a+1) for a, i in enumerate(mp)])
+    M_r = np.array([i*(a+1) for a, i in enumerate(mp)])
 
-    #v_temp = np.sqrt(G*M_r/abs(r))
-    #v[0,:] = v_temp*np.cos(theta)
-    #v[1,:] = v_temp*np.sin(theta)
-    v[:] = 0
+    #v_temp = 0.4*np.sqrt(G*M_r/abs(r))
+    #v[0,:] = - v_temp*np.sin(theta)
+    #v[1,:] = v_temp*np.cos(theta)
+    v[:,:] = 0
+    print(p)
     return p, v, mp
+
+
+
+def getDensitypos(n_grid, n_dim, Rstar):
+    pos = np.zeros((n_dim, n_grid))
+    pos[0,:] = np.linspace(-2*Rstar, 2*Rstar, n_grid)
+    pos[1,:] = np.linspace(-2*Rstar, 2*Rstar, n_grid)
+    return pos
