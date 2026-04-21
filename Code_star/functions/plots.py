@@ -1,5 +1,4 @@
 import matplotlib.pyplot as plt
-import numpy as np
 
 def ini_plots(p, rho, Rstar, path):
     f, (ax1, ax2) = plt.subplots(1,2, figsize=(14,6))
@@ -18,15 +17,14 @@ def ini_plots(p, rho, Rstar, path):
     ax2.set_title("t_step={0}".format(0))
 
     # set lim
-    ax1.set_ylim(-30, 30)
-    ax1.set_xlim(-30, 30)
+    ax1.set_ylim()
+    ax1.set_xlim()
 
     ax2.set_ylim()
     ax2.set_xlim()
 
     ax1.grid(alpha=0.5)
 
-    print("saving")
     f.savefig(path+"nbody_output/img{0:05d}.png".format(0), dpi=300, format='png')
     return f, ax1, ax2, d0, d1
 
@@ -40,11 +38,13 @@ def update_plots(d0, d1, p, rho, k, Rstar, f, ax1, ax2, path):
     # Update title with the time step
     ax1.set_title(f"t_step={k}")
     ax2.set_title(f"t_step={k}")
+
+    ax1.set_ylim()
+    ax1.set_xlim()
             
     # Force re-drawing the figure    
     f.canvas.draw()
     f.canvas.flush_events()
 
     # save image from the simulation to your drive as png
-    print("saving")
     f.savefig(path+"nbody_output/img{0:05d}.png".format(k), dpi=300, format='png')

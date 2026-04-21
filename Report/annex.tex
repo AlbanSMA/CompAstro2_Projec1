@@ -29,21 +29,111 @@
 
 \section{Introduction}
 \label{sec:intro}
-As mentioned in the report which this is an appendix to, a stellar model must include a more detailed equation of acceleration than a galactic flyby one. In this model, we include gravitational acceleration, the pressure gradient and the viscosity due to the other particles. Without this last one, the contraction and expansion of the star would never stop after the intial collapse. It slows it down until the star can ultimately contract.
+As mentioned in the report which this is an appendix to, a stellar model must include a more detailed equation of acceleration than what is necessary for a galactic flyby. In this model, we include gravitational acceleration, a pressure gradient and the viscosity due to the other particles. A star collapses when a region of a molecular cloud becomes both dense and cold enough for the gravitational attraction to overcome the pressure gradient. However, once it starts collapsing, this gradient becomes larger again. This causes the acceleration to increase in the other direction, leading to the expansion of the molecular cloud. It keeps happening in turns and forever, unless something slows down the particles during one of the phases. This is why the viscosity is needed.
 
-In this appendix, we will see how this model was implemented, then some results with different intial parameters for the simulations. Finally, we will take a look at what worked and what could be improve to model stellar formation as accurately as possible. Part of this appendix will be taken or inspired from the inital report for ease of understanding.
+In this appendix, we will see how this model was implemented, then some results with different intial parameters for the simulations. Finally, we will take a look at what worked and what could be improved to model stellar formation as accurately as possible. Part of this appendix will be taken or inspired from the inital report for ease of understanding.
 
 \section{Implementation}
 \label{sec:imp}
+The largest part of the model was implemented in the same way as for the galactic flyby, with a main file calling multiple functions. The first created an N-body cloud, the second calculated an initial acceleration and density map, then the position, velocity, density map and acceleration were updated using a leapfrog algorithm in the third. The last function plotted the updated positions and density map after each time steps. 
 
+The running time was only improved by the use of array maths, and masks instead of if-statements. Numba could not be used as functions were being called within loops. However, the code ran quite fast without this, with a runtime of only %add runtime 
+for 2000 particles and a density resolution of $100 \times 100$. 
+
+\subsection{Equation of motion}
+As mentioned in the \nameref{sec:intro} and in the report, the equation of motion was composed of three parts: the gravitational acceleration, the pressure gradient and the viscosity.
+
+$$\frac{d\vec{v}}{dt} = \vec{g} - \nabla P - \nu \vec{v}$$
+
+\noindent Where $\vec{g}$ is simply the acceleration obtained from Newton's law and the law of gravitational attraction:
+$$\vec{F} = m\vec{a} = G\frac{m_j\cdot m_i}{r^3}$$
+
+\noindent It was implemented as such in the model:
+$$\vec{a_{j}} = G \sum_{i \neq j} \frac{m_i}{r^3_{ji}}\vec{r_{ij}}.$$
+
+\noindent Then the pressure gradient was also a function of the distance to all the other particles. However, the particles further away had less impact, and so this had to be reflected in the acceleration calculations. First, the equation of state was isothermal, so $P = \kappa\rho^2$. This being an N-body simulation, the true density could not be taken to simply be the mass per volume. So, we defined a smoothing kernel, W, which smoothed the point mass of each particle onto a larger surface. The value of this kernel depended on the distance to the centre of the point mass represented by $q = |\vec{r}-\vec{r_j}|/h$, h a constant, called the smoothing distance.
+
+\begin{equation*}
+  W_i(q,h) = C \begin{cases}
+    (2-q)^3 - 4(1-q^3)&\text{if $1 > q\geq0$,}\\
+    (2-q)^3 & \text{if $2>q\geq1$,}\\
+    0 & \text{if $q\geq 2$.}
+  \end{cases}
+\end{equation*}
+
+\noindent C is another constant which also depends on h, $C = 5/(14\pi h^2)$.\\
+
+
+As we saw above, $P=\kappa \rho^2$, so 
+$$\nabla P = \kappa \nabla(\rho^2).$$ 
+$$\Leftrightarrow \rho (\vec{r_j}) = \sum_i m_i W_i(|\vec{r} - \vec{r_i}|, h)$$
+$$\Leftrightarrow \nabla P_j = - 2\kappa \sum_i m_i \nabla_j W(|\vec{r_j} - {r_i}|, h).$$
+
+\noindent And :
+\begin{equation*}
+  \nabla_i W_j(q,h) = -3\cdot\frac{C}{h} \begin{cases}
+    (2-q)^2 - 4(1-q^2)&\text{if $1 > q\geq0$,}\\
+    (2-q)^2 & \text{if $2>q\geq1$,}\\
+    0 & \text{if $q\geq 2$.}
+  \end{cases}
+\end{equation*}
+
+
+Finally, the viscosity is simply the velocity multiplied by a constant. The values of all the constants and initial parameters can be found in \nameref{sec:AppA}.
 
 \section{Results}
 \label{sec:res}
+%could change viscosit
+%could change clip distance
+%could change particle number
+%change total mass/radius
 
 \section{Discussion}
 \label{sec:disc}
+%add something on the simulations
+While this model accurately represents a cloud of particle falling into a sphere, there are a few elements missing to model the formation of a star. In particular, effects linked to changes in temperature. As we are using an isothermal equation of state, this model is entirely independent of heat, which is not an accurate representation. Jean's mass, which is the mass a molecular cloud needs to reach to collapse is dependent on both density and temperature. We are also not including radiation pressure, which would push particles away from each others. This model could represent a planet collapsing just as well as a star. Magneto-hydrodynamics are also missing. As stellar formation discs and young stars have very powerful magnetic fields, this could also influence their formation. 
 
-\section{Conclusion}
-\label{sec:conc}
+It is also a closed box model, no particles can enter, and none can escape due to another object. Stars form in groups with other stars and not alone, within molecular clouds. Not all particles present at t=0 will fall into this star, and new particles could enter after the initial collapse due to some adjacent event.\newline
+
+
+This is still a reasonably accurate model to represent the way gravitational collapse happen, and the alternance of contractions and expansions which lead to stellar formation. It is however missing a few phenomena to represent a star and not any body forming from a group of particles.\newline
+
+
+
+\emph{The code can be found in \hyperlink{https://github.com/AlbanSMA/CompAstro2_Projec1}{this repository}, along with the LATex version of this report and the plots made during the simulations}
+
+\pagebreak
+\section{Appendices}
+\subsection{Appendix A}
+\label{sec:AppA}
+
+\begin{figure}[ht!]
+\centering
+\begin{tabular}{|c|c|}
+\hline
+\multicolumn{2}{|c|}{Common to all simulations}\\
+\hline \hline
+ $M_\odot$ & $1.99\cdot 10^{30}$ Kg\\
+ $R_\odot$ & $6.9\cdot10^{11}$ m\\
+ $\tau$ & $(\frac{R_\odot^3}{G\cdot M_g})^{0.5}$\\
+ dt & $0.00001\cdot\tau$\\
+ $n_{dim}$ & 2\\
+ $n_{steps}$ & 4000\\
+ \hline\hline
+ \multicolumn{2}{|c|}{Simulations}\\
+ \hline\hline
+ \multicolumn{2}{|c|}{1 - Extremely Low Mass galaxy}\\
+ \hline
+ Star 1 & \\
+ \hline
+ $N_1$ & 2000\\
+ $M_1$ & $M_\odot$\\
+ $R_1$ & $0.3\cdot R_\odot$\\
+ \hline
+ $\kappa$ & $10^{-2}$\\
+ $\nu$ & $2\cdot10^{-3}$\\
+ \hline
+\end{tabular}
+\end{figure}
 
 \end{document}
