@@ -20,7 +20,7 @@ def mkStarD(n_particle, R, M, n_dim, G):
 
     #Position
         #create a gaussian spread of particle around the center at random angles
-    r = np.random.normal(0, 0.34*R, n_particle)
+    r = np.random.normal(0, R, n_particle)
     theta = np.random.uniform(0, 2*np.pi, n_particle)
 
         #change the coordinates
@@ -38,6 +38,6 @@ def mkStarD(n_particle, R, M, n_dim, G):
 
 def getDensitypos(n_grid, n_dim, Rstar):
     pos = np.zeros((n_dim, n_grid, n_grid))
-    pos[1] = np.outer(np.linspace(-Rstar, Rstar, n_grid), np.ones(n_grid)).reshape(n_grid, n_grid)
-    pos[0] = np.outer(np.ones(n_grid), np.linspace(-Rstar, Rstar, n_grid)).reshape(n_grid, n_grid)
+    pos[1] = np.outer(np.linspace(-2*Rstar, 2*Rstar, n_grid), np.ones(n_grid)).reshape(n_grid, n_grid)
+    pos[0] = np.outer(np.ones(n_grid), np.linspace(-2*Rstar, 2*Rstar, n_grid)).reshape(n_grid, n_grid)
     return pos

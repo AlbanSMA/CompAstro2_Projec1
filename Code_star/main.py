@@ -1,5 +1,6 @@
 import os
 import sys
+import shutil
 import matplotlib.pyplot as plt; plt.ion()
 
 plt.ion()
@@ -13,8 +14,13 @@ from functions.plots import ini_plots, update_plots
 
 if __name__ == "__main__": # main program, not executed if you import this file
 
-    # Create output subfolder to store snapshots from the simulation
+    # Create output subfolder to store snapshots from the simulation, make sure it is empty
     path = "C:\\Users\\User\\Documents\\Documents\\University\\Master_SU\\Year_1\\IIB\\CompAstro\\Projects\\Project1\\Plots\\Plots_star\\"
+    
+    if os.path.exists(path+"nbody_output") == True:
+        files = os.listdir(path+"nbody_output")
+        [os.remove(path+"nbody_output\\"+files[i]) for i in range(len(files))]
+    
     os.makedirs(path+'nbody_output', exist_ok=True)
     
     # Initialisation of the model
@@ -35,6 +41,6 @@ if __name__ == "__main__": # main program, not executed if you import this file
 
         # Update the plots with the new particle positions
         # to save some time, only update the plot every 4 iterations
-        if(tt%1 == 0):
-            update_plots(d0, d1, p, rho, k, R_1, f, ax1, ax2, path)
+        if(tt%4 == 0):
+            update_plots(d0, d1, p, rho, tt, R_1, f, ax1, ax2, path)
             k += 1
