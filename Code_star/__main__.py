@@ -1,25 +1,31 @@
+"""
+Run using `python -m Code_star`
+"""
+
+
 import os
 import sys
 import shutil
 import matplotlib.pyplot as plt; plt.ion()
 
 plt.ion()
-sys.path.append("C:\\Users\\User\\Documents\\Documents\\University\\Master_SU\\Year_1\\IIB\\CompAstro\\Projects\\Project1\\Code_star")
 
-from params import *
-from functions.make_star import mkStarD, getDensitypos
-from functions.evolve_star import getAcceleration, leapfrog
-from functions.plots import ini_plots, update_plots
+# use relative imports
+from .params import *
+from .functions.make_star import mkStarD, getDensitypos
+from .functions.evolve_star import getAcceleration, leapfrog
+from .functions.plots import ini_plots, update_plots
 
 
 if __name__ == "__main__": # main program, not executed if you import this file
 
     # Create output subfolder to store snapshots from the simulation, make sure it is empty
-    path = "C:\\Users\\User\\Documents\\Documents\\University\\Master_SU\\Year_1\\IIB\\CompAstro\\Projects\\Project1\\Plots\\Plots_star\\"
+    # using "/" will work on all platforms
+    path = "./Plots/Plots_star/"
     
     if os.path.exists(path+"nbody_output") == True:
         files = os.listdir(path+"nbody_output")
-        [os.remove(path+"nbody_output\\"+files[i]) for i in range(len(files))]
+        [os.remove(path+"nbody_output/"+files[i]) for i in range(len(files))]
     
     os.makedirs(path+'nbody_output', exist_ok=True)
     
