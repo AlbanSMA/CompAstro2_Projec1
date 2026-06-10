@@ -17,7 +17,7 @@ def getAcceleration(p, v, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
     #get some constants
     h = 0.02*Rstar
     C = 5/(14 * np.pi * h**2)
-    kappa = 1e-2
+    kappa = 0.5e-2
     visc = 2e-3
 
     #Calculate the acceleration  
@@ -28,7 +28,7 @@ def getAcceleration(p, v, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
         r_ji_x = p[0,mask] - p[0,j]
         r_ji_y = p[1,mask] - p[1,j]
 
-        r_ji = np.clip(np.sqrt((r_ji_x)**2 + (r_ji_y)**2), 0.1*Rstar, None)
+        r_ji = np.sqrt((r_ji_x)**2 + (r_ji_y)**2)
 
             #Get the gravitational acceleration
         grav[0,j] = G * sum((mp[mask] / (r_ji)**3)*r_ji_x)
@@ -36,11 +36,11 @@ def getAcceleration(p, v, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
 
         # P gradient
             #smoothing kernel
-        dW = getdW(n_particle, n_dim, j, p, h, C, mask, Rstar)
+        dW = getdW(n_particle, n_dim, j, p, h, C)
 
             #sum
-        grad_P[0,j] = 2*kappa*np.sum(mp[mask]*dW[0,:], axis=0)
-        grad_P[1,j] = 2*kappa*np.sum(mp[mask]*dW[1,:], axis=0)
+        grad_P[0,j] = 2*kappa*np.sum(mp[:]*dW[0,:], axis=0)
+        grad_P[1,j] = 2*kappa*np.sum(mp[:]*dW[1,:], axis=0)
 
             
             # Density around j
@@ -52,12 +52,12 @@ def getAcceleration(p, v, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
     rhosum = np.sum(rho, axis=0)
 
     #Get the acceleration
-    acc[0,:] = grav[0,:] - grad_P[0,:]/np.mean(rho) - visc*v[0,:]
-    acc[1,:] = grav[1,:] - grad_P[1,:]/np.mean(rho) - visc*v[1,:]
+    acc[0,:] = grav[0,:] - grad_P[0,:] - visc*v[0,:]
+    acc[1,:] = grav[1,:] - grad_P[1,:] - visc*v[1,:]
 
     
     print(f"acc:{np.mean(abs(acc)):.2e}", f"grav:{np.mean(abs(grav)):.2e}", 
-          f"grad_P:{np.mean(abs(grad_P/np.mean(rho))):.2e}", f"visc:{np.mean(abs(visc*v)):.2e}")
+          f"grad_P:{np.mean(abs(grad_P)):.2e}", f"visc:{np.mean(abs(visc*v)):.2e}")
     return acc, rhosum
 
 
@@ -115,34 +115,34 @@ def getKernel(n_grid, n_dim, j, p, h, C, pos):
 
 ###############################################################
 
-def getdW(n_particle, n_dim, j, p, h, C, mask, Rstar):
+def getdW(n_particle, n_dim, j, p, h, C):
     """Get the gradient of the smoothing kernel accross space for 
     all particles (n_particle) in every dimension (n_dim) as a function 
     of their position in space p and the constants h and C."""
 
     #Define the arrays first
-    dW_temp = np.zeros((n_dim, n_particle-1))
-    dr = np.zeros((n_dim, n_particle-1))
-    r = np.zeros((n_particle-1))
-    q = np.zeros((n_particle-1))
+    dW_temp = np.zeros((n_dim, n_particle))
+    dr = np.zeros((n_dim, n_particle))
+    r = np.zeros((n_particle))
+    q = np.zeros((n_particle))
 
     #Get the distance to all other particles
-    dr[0,:] = np.array([p[0,j]-p[0,mask]])
-    dr[1,:] = np.array([p[1,j]-p[1,mask]])
+    dr[0,:] = np.array([p[0,:]-p[0,j]])
+    dr[1,:] = np.array([p[1,:]-p[1,j]])
 
-    r[:] = np.clip(np.sqrt((dr**2).sum(axis=0)), 0.01*Rstar, None)
+    r[:] = np.sqrt((dr**2).sum(axis=0))
 
     q = r/h
 
     #Get dW
         #masks
-    mask1 = (q<1)
-    mask2 = (q>=1) & (q<=2) 
+    mask1 = (q>0) & (q<1)
+    mask2 = (q>=1) & (q<2) 
 
         #get dW_temp
     dW_temp[:,mask1] = ((2.0-q[mask1])**2 - 4*(1-q[mask1])**2)/r[mask1]
     dW_temp[:,mask2] = ((2.0-q[mask2])**2)/r[mask2]
 
         #then multiply by dr and (-3*C/h)
-    dW = (-3*C/h)*dW_temp*dr.reshape(n_dim,n_particle-1)
+    dW = (-3*C/h)*dW_temp*dr.reshape(n_dim,n_particle)
     return dW

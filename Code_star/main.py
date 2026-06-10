@@ -24,7 +24,7 @@ if __name__ == "__main__": # main program, not executed if you import this file
     os.makedirs(path+'nbody_output', exist_ok=True)
     
     # Initialisation of the model
-    p, v, mp = mkStarD(n_star_1, R_1, M_1, n_dim, G) #positions, velocity, particle mass
+    p, v, mp = mkStarD(n_star_1, R_1, M_1, n_dim) #positions, velocity, particle mass
 
     
     pos = getDensitypos(n_grid, n_dim, R_1)         #positions at which to evaluate the density
@@ -33,7 +33,7 @@ if __name__ == "__main__": # main program, not executed if you import this file
 
     # Evolution of the model
     k = 0           #steps
-    f, ax1, ax2, d0, d1 = ini_plots(p, rho, R_1, path)   #initialise the plots
+    f, ax1, ax2, d0, d1 = ini_plots(p, rho, R_1, path, n_grid)   #initialise the plots
 
     for tt in range(1, n_step):
         # Implement your Leapfrog algorithm to take a step in v and p

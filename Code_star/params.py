@@ -7,11 +7,11 @@ tau = ((Rsun)**3 / (G*Msun))**0.5 # time unit
 # General model quantities
 n_dim = 2
 n_step = 8000
-n_grid = 100
-dt = tau * 0.01
+n_grid = 50
+dt = tau * 0.0015
 
 # Star 1
-n_star_1 = 2000
+n_star_1 = 700
 M_1 = Msun
 R_1 = 0.3*Rsun
 

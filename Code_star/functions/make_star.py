@@ -1,6 +1,6 @@
 import numpy as np
 
-def mkStarD(n_particle, R, M, n_dim, G):
+def mkStarD(n_particle, R, M, n_dim):
     """
     Here you should implement a routine that places particles in the XY-plane
     and assigns an initial velocity to each of them. It should return three
