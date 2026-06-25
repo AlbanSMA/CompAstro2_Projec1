@@ -1,13 +1,12 @@
 # Fdb version 4
-["biber Report"] 0 "Report.bcf" "Report.bbl" "Report" 1776784472.63581 -1
-  "Report.bcf" 1776784472 133923 c605e435e5a202c9fcfb5b0f16c4f1f4 "pdflatex"
-  "ref.bib" 1776241132 297 51f910d7131ce2092aecddb6fb9d5661 ""
+["biber Report"] 1782224200.41827 "Report.bcf" "Report.bbl" "Report" 1782396892.18867 0
+  "Report.bcf" 1782396889 133923 c605e435e5a202c9fcfb5b0f16c4f1f4 "pdflatex"
   (generated)
   "Report.bbl"
   "Report.blg"
   (rewritten before read)
-["pdflatex"] 1776784467.97291 "c:/Users/User/Documents/Documents/University/Master_SU/Year_1/IIB/CompAstro/Projects/Project1/Report/Report.tex" "Report.pdf" "Report" 1776784472.63678 0
-  "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1776772992 84158 d77284a6843bde1e4b9764f09fb2e89e ""
+["pdflatex"] 1782396824.68134 "c:/Users/User/Documents/Documents/University/Master_SU/Year_1/IIB/CompAstro/Projects/Project1/Report/Report.tex" "Report.pdf" "Report" 1782396892.19532 0
+  "C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1782164428 84158 d77284a6843bde1e4b9764f09fb2e89e ""
   "C:/Users/User/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1776771118 13349829 4a36b8ce873eea7331d01262fddc519c ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -112,12 +111,12 @@
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/tools/verbatim.sty" 1761901070 7532 26d26e9d8f2ca784270d5da8ec7d102b ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/User/AppData/Local/Programs/MiKTeX/tex/latex/wrapfig/wrapfig.sty" 1044403200 26220 3701aebf80ccdef248c0c20dd062fea9 ""
-  "Report.aux" 1776784472 3456 87f890c4c2dbbf559e909d0712d651c5 "pdflatex"
-  "Report.bbl" 1776241132 486 76d65a242ec496c9b4361af646ff12cb "biber Report"
-  "Report.out" 1776784472 1200 66e97683860bdaf176db81ba69a1f462 "pdflatex"
-  "Report.run.xml" 1776784472 2434 026641a058048ff465e247d5f9bc24af "pdflatex"
-  "Report.tex" 1776784467 22989 c37d3d71eac2d3d15046ddd5129bb352 ""
-  "c:/Users/User/Documents/Documents/University/Master_SU/Year_1/IIB/CompAstro/Projects/Project1/Report/Report.tex" 1776784467 22989 c37d3d71eac2d3d15046ddd5129bb352 ""
+  "Report.aux" 1782396888 3835 6cdc5a09aa0326d6681680293e2d64b6 "pdflatex"
+  "Report.bbl" 1782224209 486 76d65a242ec496c9b4361af646ff12cb "biber Report"
+  "Report.out" 1782396889 1200 66e97683860bdaf176db81ba69a1f462 "pdflatex"
+  "Report.run.xml" 1782396889 2434 026641a058048ff465e247d5f9bc24af "pdflatex"
+  "Report.tex" 1782396817 28486 82970d466fefcda8aa1d278a0382c9b9 ""
+  "c:/Users/User/Documents/Documents/University/Master_SU/Year_1/IIB/CompAstro/Projects/Project1/Report/Report.tex" 1782396817 28486 82970d466fefcda8aa1d278a0382c9b9 ""
   "images/img00107.png" 1776170670 67518 a2db860423228969843b02fc070956b0 ""
   "images/img00109.png" 1776170670 60517 7f8db02e691376cbfcd50db01b737a21 ""
   "images/img00117.png" 1776170670 62882 0489fb21b60524b7448dc6ded2ead0e9 ""
@@ -136,6 +135,20 @@
   "images/img00293.png" 1776170670 68437 9e9e7a683fad1f755dbb61dba1648196 ""
   "images/img00315.png" 1776170670 81788 87a4eb19584cd3b05bfa5db63f2e0304 ""
   "images/img00469.png" 1776170670 79180 ce900923230c0dfa3243bd1208e5861d ""
+  "imagesstar/0.3Rsun0.1Msunimg05450.png" 1782226672 196168 505ca0a2e81189b551e7169b023f93ad ""
+  "imagesstar/0.3Rsun0.5Msunimg03500.png" 1782136832 199771 b146c94e217f39b44e9869af694c06c8 ""
+  "imagesstar/0.3RsunMsunimg03950.png" 1782386544 196203 ba7304ecc1034b9f27ce5cc1c6edda3f ""
+  "imagesstar/0.7Rsun0.1Msunimg07500.png" 1782215359 170224 fc1213ed47fa35e73b69d9dbe9c7df73 ""
+  "imagesstar/0.7Rsun0.5Msunimg05750.png" 1782130317 167619 a9b49ba527d56da1afd822a05c8753cf ""
+  "imagesstar/0.7RsunMsunimg04700.png" 1781899108 164140 41ea7a340bbba37d8cf5b47358d3829c ""
+  "imagesstar/Rsun0.1Msunimg09950.png" 1782171224 169558 f5c91a22ad3d3696a9bfae0389adcd73 ""
+  "imagesstar/Rsun0.5Msunimg06600.png" 1782120377 164675 8d0ec2650dd63305815b199d30954e65 ""
+  "imagesstar/RsunMsunimg07550.png" 1781953090 150683 4cf722c357253aeb36f8348d7e18c932 ""
+  "imagesstar/singleevol/img00050.png" 1781953249 177106 3097da11907d7a164f3748fec2088b32 ""
+  "imagesstar/singleevol/img00300.png" 1781953634 190562 2f64666b09bb412c69c4279e62ed587d ""
+  "imagesstar/singleevol/img00900.png" 1781954566 184435 96fa29d246f241d2ef47e2dc347f7ee5 ""
+  "imagesstar/singleevol/img01600.png" 1781955644 211654 3f935466ce899be0c114e695057d674a ""
+  "imagesstar/singleevol/img06200.png" 1781964532 197662 e98ff7522eb5d85c71eb610f4c735276 ""
   (generated)
   "Report.aux"
   "Report.bcf"

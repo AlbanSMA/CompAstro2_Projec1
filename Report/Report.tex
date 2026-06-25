@@ -19,10 +19,10 @@
   {\usebibmacro{postnote}}
 
 \usepackage{geometry}
-\geometry{tmargin = 80pt, 
-          rmargin = 80pt, 
-          lmargin = 80pt, 
-          bmargin = 80pt}
+\geometry{tmargin = 60pt, 
+          rmargin = 60pt, 
+          lmargin = 60pt, 
+          bmargin = 60pt}
 
 \usepackage{amsmath}
 \usepackage{verbatim}
@@ -42,7 +42,7 @@
 
 \section{Introduction}\label{sec:intro}
 %Briefly introduce the astrophysical situation that you are trying to model and describe the models used in this project.
-Two galaxies passing by each other is an incredibly complex event. The gravitational pull of one galaxy on the other, and the pull of the components of the galaxies between themselves, create complex structures such as tidal streams and send both galaxies into new directions. Due to the length of the event, they are also impossible to observe in their entirety. More complex simulations also allow the rewinding of one particular event to understand what led to a known object. Similarly, due to the size and complexity of the event, analytical solution which explain the evolution of the objects accurately are also impossible. However, it is possible to create simple models which can run on any machine and are sufficiently accurate for most needs. Modelling them is thus the best way to understand how they evolve before, during and after the flyby. Galactic flyby in particular can be modelled with a simple algorithm involving only the gravitational pull from particle interactions. While this model will not reproduce small scale or particular events, it shows the broader evolution of galaxies after a flyby.
+Two galaxies passing by each other is an incredibly complex event. The gravitational pull of one galaxy on the other, and the pull of the components of the galaxies between themselves, create complex structures such as tidal streams and send both galaxies into new directions. Due to the length of the event, they are also impossible to observe in their entirety. More complex simulations also allow the rewinding of one particular event to understand what led to a known object. Similarly, due to the size and complexity of the event, analytical solutions which explain the evolution of the objects accurately are also impossible. However, it is possible to create simple models which can run on any machine and are sufficiently accurate for most needs. Modelling them is thus the best way to understand how they evolve before, during and after the flyby. Galactic flybys in particular can be modelled with a simple algorithm involving only the gravitational pull from particle interactions. While this model will not reproduce small scale or particular events, it shows the broader evolution of galaxies after a flyby.
 
 
 On the other hand, because it happens on a much smaller scale, the formation of a single star necessitates a more complex modelling. Stars form when some regions in molecular clouds become dense enough and collapse on themselves. Due to the velocity of the particles falling inward, if only the gravitational pull is taken into account, the sphere will collapse and expand in turn, indefinitely. To accurately model a star forming, other mechanisms must be taken into account. Two such mechanisms are the internal pressure and the viscosity of the collapsing gas which apply to each particle due to the neighbouring ones.
@@ -54,12 +54,12 @@ This project is composed of two parts. In the first part, we will implement a nu
 %Briefly describe how the code was implemented (structure) and what method(s) were used to integrate the equations of motion. 
 Both models were based on the same structure. A main file called forward multiple functions to initiate, evolve and plot the galaxies and stars.
 
-The first set of functions placed N particles in a circle around a centre of mass (x, y) with a normal distribution for the radius, and a uniform distribution for the angle. It calculated an initial velocity in the x and y direction using 0.4 of a Keplerian velocity, which is dependent on the radius from the centre of mass. Then the acceleration of each particle was calculated from this initial velocity and the position of all the other particles in the simulation. A second set of functions updated the positions, velocity and acceleration of the particles after a time step dt using a leapfrog algorithm. It first calculated an updated velocity after half a step using the previous acceleration, then calculated an updated position using this new velocity, before getting the updated acceleration and taking the second half-step in velocity using this new acceleration. This is the leap-frog algorithm:
+The first set of functions placed N particles in a circle around a centre of mass (x, y) with a normal distribution for the radius, and a uniform distribution for the angle. It calculated an initial velocity in the x and y direction using 0.4 of a Keplerian velocity for the galaxies, which is dependent on the radius from the centre of mass, and was taken as null for the stars. Then the acceleration of each particle was calculated from this initial velocity and the position of all the other particles in the simulation. A second set of functions updated the positions, velocity and acceleration of the particles after a time step dt using a leapfrog algorithm. It first calculated an updated velocity after half a step using the previous acceleration, then calculated an updated position using this new velocity, before getting the updated acceleration and taking the second half-step in velocity using this new acceleration. This is the leap-frog algorithm:
 \begin{verbatim}
     new_v = v + dt/2 * acc
-    new_p = p + dt*new_v
+    new_p = p + dt * new_v
     new_acc = getAcceleration(*args)
-    new_new_v = new_v + dt/2*new_acc
+    new_new_v = new_v + dt/2 * new_acc
 \end{verbatim}
 Where getAcceleration() calculates the acceleration of the particles using the different equations discussed below. A last set of functions created and updated the plots, making a series of image every few time steps.
 
@@ -195,18 +195,93 @@ In figure \ref{fig:highmass}, we can see that the equal mass galaxy interaction 
 Finally, the last simulation can be seen in figure \ref{fig:nooffset}. In this simulation, a lower mass galaxy collides head on with a higher mass one. While the interaction begins in much the same way as the similar mass ration interaction with an offset, it does not continue similarly. The lower mass galaxy is slingshotted into a different direction, and is ejected into an arc which resemble more the extremely low mass galaxy interaction. This is however where the resemblance stops, as this arc is dispersed into a cloud of unbound particles. It seems that a higher proportion of them are absorbed into the non-moving galaxy, but on a higher orbit than in the other simulation with a similar mass ratio.
 
 \subsection{Stellar Formation}
-Due to a first misunderstanding as to how the smoothing kernels were supposed to work, and a lack of time to repair the code once the misunderstanding was resolved, the stellar formation model did not work. The particles stayed mostly stationary with accelerations of values around $10^{-63}$, far too small compared to what they should have been. This is probably due to the fact that at first, instead of calculating the smoothing kernel for every point in space as a function of all particles, then applying it to the particle of interest, it was calculated at only the points in space where the particles were. This caused multiple problems, which ultimately led to the model not working.
+A large set of simulations were run, with varying radii and masses, which in turn also varied the smoothing factor as it is directly dependent on the radius of the star. It also modified the minimum value the distance between particles could take within the equation for the gravitational acceleration as this was taken as $0.1 R_{star}$. In total, 14 simulations were run, which are summarised in \nameref{sec:AppA}. The masses taken ranged from $0.1 M_\odot$ to $M_\odot$, and the radii from $0.1 R_\odot$ to $R_\odot$. In addition, one simulation was run with $0.3R_\odot$ and $M_\odot$ but a smoothing factor of $0.1 R_{star}$ instead of $0.02 R_{star}$. The last was a similar simulation, with $h=0.02 R_{star}$ once again, but with two 2D gaussians instead of only one at $t=0$. 
+
+First, we can look at the evolution of a single simulation across time in this model. It is shown in figure \ref{fig:singevol}. This simulation is of 2000 particles with a total mass of $M_\odot$ and a radius of $0.3R_\odot$. The smoothing factor was the most common one at $0.02 R_{star}$.
+
+\begin{figure}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/singleevol/img00050.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/singleevol/img00300.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/singleevol/img00900.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.47\textwidth]{imagesstar/singleevol/img01600.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.47\textwidth]{imagesstar/singleevol/img06200.png}
+  \caption{}
+  \label{fig:singevol}
+\end{figure}
+
+\begin{figure}
+  \centering
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/RsunMsunimg07550.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/0.7RsunMsunimg04700.png}
+  \includegraphics[decodearray={-1.5 1  -1.5 1  -1.5 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/0.3RsunMsunimg03950.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/Rsun0.5Msunimg06600.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/0.7Rsun0.5Msunimg05750.png}
+  \includegraphics[decodearray={-1.5 1  -1.5 1  -1.5 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/0.3Rsun0.5Msunimg03500.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/Rsun0.1Msunimg09950.png}
+  \includegraphics[decodearray={-1 1  -1 1  -1 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/0.7Rsun0.1Msunimg07500.png}
+  \includegraphics[decodearray={-1.5 1  -1.5 1  -1.5 1}, trim={2cm 0.5cm 16.75cm 0.7cm}, clip, width=0.32\textwidth]{imagesstar/0.3Rsun0.1Msunimg05450.png}
+  \caption{}
+  \label{fig:finressize}
+\end{figure}
+
+A first point of interest is that for a same mass, stars of decreasing radius appeared larger in the plots (see fig. \ref{fig:finressize}). These are simulations for stars of the mass of the Sun, and radii of $R_\odot$ (left), $0.7  R_\odot$ (middle) and $0.3 R_\odot$ (right). While it was run, the simulation of the same mass with a radius of $0.1 R_\odot$ is not shown here because the particles were ejected within 50 time steps as they formed too close to each others.
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1 and R1 = Sun, get results in folder, MsunRsun
+  %898.74
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1= MSun and R1 = 0.7*RSun, get results in folder Msun0.7Rsun
+  %418.06
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1= MSun and R1 = 0.3*RSun, get results in folder Msun0.3Rsun
+  %190.5
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1= MSun and R1 = 0.1*RSun, get results in folder Msun0.1Rsun
+  %246.5
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = Rsun, get results in folder 0.5MsunRsun
+  %?
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = 0.7 Rsun, get results in folder 0.5Msun0.7Rsun
+  %162.3
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = 0.3 Rsun, get results in folder 0.5Msun0.3Rsun
+  %107.55
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = 0.1 Rsun, get results in folder 0.5Msun0.1Rsun
+  %4.4
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.1 Msun and R1 = Rsun, get results in folder 0.1MsunRsun
+  %567.4
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.1 Msun and R1 = 0.7 Rsun, get results in folder 0.1Msun0.7Rsun
+  %163.5
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.1 Msun and R1 = 0.3 Rsun, get results in folder 0.1Msun0.3Rsun
+  %189.3
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.1 Msun and R1 = 0.1 Rsun, get results in folder 0.1Msun0.1Rsun
+  %12.9
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = Msun and R1 = 0.3 Rsun, get results in folder Msun0.3Rsun2centres
+  %140.6
+
+%w/ 2000 particles h=0.08*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = Msun and R1 = 0.3 Rsun, get results in folder Msun0.3Rsundiffh
+  %338.8
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = Msun and R1 = 0.3 Rsun, get results in folder Msun0.3Rsun
+  %109.3
 
 \section{Discussion}\label{sec:dis}
+%As the simulations were sometimes paused, it is not possible to accurately estimate their runtime, but the maximum time recorded was of 7h, with a large break of unknown time taken during it.
 As mentioned in the \nameref{sec:intro}, numerical simulations are necessary to understand phenomenons which can not be observed in their entirety and are too complex for analytical solutions. Although quite basic, the simulations in this report already represent the phenomenons they model quite well. 
 
-Concerning their accuracy, the results within the galaxy merger simulation depend heavily on the initial radial velocity of the particles. Giving them too much velocity at first will make them fly away instead of rotating around the centre of mass of the galaxy. This means that the galaxies will disperse before they interact, or that the interaction can be impacted by this too high initial velocity. It is also an extremely simplified model, which only include the gravitational interaction of heavy collisionless particles. More complex models show that some collision are necessary to describe accurately the evolution of galaxies. Furthermore, due to the limit imposed by the machine it is run on, the simulations have to be low resolution. Each increase in the number of particles proportionally increases the time it takes the simulations to run, and the power it takes to run them. Most portable computers are uncapable of running more complex models. Using Numba or reducing removing for loops and plotting routines do improve this point, but neither can improve it indefinitely. \newline
+Concerning their accuracy, the results within the galaxy merger simulation depend heavily on the initial radial velocity of the particles. Giving them too much velocity at first will make them fly away instead of rotating around the centre of mass of the galaxy. This means that the galaxies will disperse before they interact, or that the interaction can be impacted by this too high initial velocity. It is also an extremely simplified model, which only include the gravitational interaction of heavy collisionless particles. More complex models show that some collision are necessary to describe accurately the evolution of galaxies. Furthermore, due to the limit imposed by the machine it is run on, the simulations have to be low resolution. Each increase in the number of particles proportionally increases the time it takes the simulations to run, and the power it takes to run them. Most portable computers are uncapable of running more complex models. Using Numba or reducing and removing for loops and plotting routines do improve this point, but neither can improve it indefinitely. \newline
 
 While the stellar formation model produced with this report does not work, it is possible to make some assumptions as to what works and what could be improved. It is slightly more complex, and due to the smaller size of the object being modelled, it can be simulated in higher resolution by using the same number of particles as within the galaxy simulations. It does however make some assumptions which could impact the results. In particular, it does not take into account magnetic fields, which are known to be very strong in star formation discs and young stars. It also assumes an isothermal model, which does not take changes in temperature into account. Temperature is important in star formation, as it is one of the variables in the calculation of Jeans' mass. This mass determines whether a molecular cloud can collapse into a star or not.\newline
 
-Finally, both models are made in closed box simulations, where only the initial particles and objects interact. This is not an entirely accurate representation, especially for the stellar formation model. The galaxies in the galaxy merger model are large enough and far enough away from other heavy objects that they should not be overly impacted. However, star form in groups with other stars, and are surrounded by many other elements. It is mentioned in the instructions for the model that the final stars are heavier in the centre than they should be. This could be linked to this problem. In these closed box model, all the particles end up in the star after a certain time, instead of some of them escaping or being pulled away. Radiation pressure is also not taken into account. Particles are pushed away from each others by their emissions.\newline
+Finally, both models are made in closed box simulations, where only the initial particles and objects interact. This is not an entirely accurate representation, especially for the stellar formation model. The galaxies in the galaxy merger model are large enough and far enough away from other heavy objects that they should not be overly impacted. However, star form in groups with other stars, and are surrounded by many other elements. It is mentioned in the instructions for the model that the final stars are heavier in the centre than they should be. This could be linked to this problem. In these closed box model, all the particles end up in the star after a certain time, instead of some of them escaping or being pulled away. Radiation pressure is also not taken into account. Particles should be pushed away from each others by their emissions.\newline
 
-In conclusion, these simulations both are an accurate model of the astrophysical phenomena they aim to represent. However, multiple effects which have been shown to impact both the events were not included in the simulations. Thus, while they can be used to understand the movements of large structures, the minute details can not be understood with their help.\newline
+In conclusion, these simulations both are accurate models of the astrophysical phenomena they aim to represent. However, multiple effects which have been shown to impact both the events were not included in the simulations. Thus, while they can be used to understand the movements of large structures, the minute details can not be understood with their help.\newline
 
 \emph{The code can be found at \hyperlink{https://github.com/AlbanSMA/CompAstro2_Projec1}{GitHub Repository}, along with the LATex version of this report and the plots made during the simulations}
 

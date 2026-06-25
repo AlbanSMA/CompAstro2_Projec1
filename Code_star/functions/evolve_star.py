@@ -28,7 +28,8 @@ def getAcceleration(p, v, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
         r_ji_x = p[0,mask] - p[0,j]
         r_ji_y = p[1,mask] - p[1,j]
 
-        r_ji = np.sqrt((r_ji_x)**2 + (r_ji_y)**2)
+        r_ji = np.clip(np.sqrt((r_ji_x)**2 + (r_ji_y)**2), 0.1*Rstar, None)
+
 
             #Get the gravitational acceleration
         grav[0,j] = G * sum((mp[mask] / (r_ji)**3)*r_ji_x)
@@ -52,13 +53,13 @@ def getAcceleration(p, v, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
     rhosum = np.sum(rho, axis=0)
 
     #Get the acceleration
-    acc[0,:] = grav[0,:] - grad_P[0,:] - visc*v[0,:]
-    acc[1,:] = grav[1,:] - grad_P[1,:] - visc*v[1,:]
+    acc[0,:] = grav[0,:] + grad_P[0,:] - visc*v[0,:]
+    acc[1,:] = grav[1,:] + grad_P[1,:] - visc*v[1,:]
 
     
     print(f"acc:{np.mean(abs(acc)):.2e}", f"grav:{np.mean(abs(grav)):.2e}", 
           f"grad_P:{np.mean(abs(grad_P)):.2e}", f"visc:{np.mean(abs(visc*v)):.2e}")
-    return acc, rhosum
+    return acc, rhosum, grav, grad_P, visc*v
 
 
 def leapfrog(v, dt, acc, p, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
@@ -68,7 +69,7 @@ def leapfrog(v, dt, acc, p, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
     #Update the parameters
     new_v = v + dt/2 * acc
     new_p = p + dt*new_v
-    new_acc, rho = getAcceleration(new_p, new_v, mp, n_dim, n_particle, n_grid, G, Rstar, pos)
+    new_acc, rho, grav, grad_P, visc = getAcceleration(new_p, new_v, mp, n_dim, n_particle, n_grid, G, Rstar, pos)
     new_new_v = new_v + dt/2*new_acc
 
     #Reset for the next loop
@@ -76,7 +77,7 @@ def leapfrog(v, dt, acc, p, mp, n_dim, n_particle, n_grid, G, Rstar, pos):
     v = new_new_v
     acc = new_acc
     print(f"v:{np.mean(abs(v)):.2e}")
-    return p, v, acc, rho
+    return p, v, acc, rho, grav, grad_P, visc
 
 
 

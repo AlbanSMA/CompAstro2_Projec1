@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.21)  22 APR 2026 01:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.21)  23 JUN 2026 14:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -359,21 +359,62 @@ Package caption Info: End \AtBeginDocument code.
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 67--68
+Underfull \hbox (badness 10000) in paragraph at lines 66--67
 
  []
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 99--100
+<imagesstar/RsunMsunimg07550.png, id=52, 926.9832pt x 433.62pt>
+File: imagesstar/RsunMsunimg07550.png Graphic file (type png)
+<use imagesstar/RsunMsunimg07550.png>
+Package pdftex.def Info: imagesstar/RsunMsunimg07550.png  used on input line 93.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+<imagesstar/0.7RsunMsunimg04700.png, id=55, 926.9832pt x 433.62pt>
+File: imagesstar/0.7RsunMsunimg04700.png Graphic file (type png)
+<use imagesstar/0.7RsunMsunimg04700.png>
+Package pdftex.def Info: imagesstar/0.7RsunMsunimg04700.png  used on input line 94.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+<imagesstar/0.3RsunMsunimg06200.png, id=57, 926.9832pt x 433.62pt>
+File: imagesstar/0.3RsunMsunimg06200.png Graphic file (type png)
+<use imagesstar/0.3RsunMsunimg06200.png>
+Package pdftex.def Info: imagesstar/0.3RsunMsunimg06200.png  used on input line 95.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+<imagesstar/Rsun0.5Msunimg06600.png, id=59, 926.9832pt x 433.62pt>
+File: imagesstar/Rsun0.5Msunimg06600.png Graphic file (type png)
+<use imagesstar/Rsun0.5Msunimg06600.png>
+Package pdftex.def Info: imagesstar/Rsun0.5Msunimg06600.png  used on input line 96.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+<imagesstar/0.7Rsun0.5Msunimg05750.png, id=61, 926.9832pt x 433.62pt>
+File: imagesstar/0.7Rsun0.5Msunimg05750.png Graphic file (type png)
+<use imagesstar/0.7Rsun0.5Msunimg05750.png>
+Package pdftex.def Info: imagesstar/0.7Rsun0.5Msunimg05750.png  used on input line 97.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+<imagesstar/0.3Rsun0.5Msunimg03500.png, id=63, 926.9832pt x 433.62pt>
+File: imagesstar/0.3Rsun0.5Msunimg03500.png Graphic file (type png)
+<use imagesstar/0.3Rsun0.5Msunimg03500.png>
+Package pdftex.def Info: imagesstar/0.3Rsun0.5Msunimg03500.png  used on input line 98.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+<imagesstar/Rsun0.1Msunimg09950.png, id=65, 926.9832pt x 433.62pt>
+File: imagesstar/Rsun0.1Msunimg09950.png Graphic file (type png)
+<use imagesstar/Rsun0.1Msunimg09950.png>
+Package pdftex.def Info: imagesstar/Rsun0.1Msunimg09950.png  used on input line 99.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+<imagesstar/0.7Rsun0.1Msunimg07500.png, id=67, 926.9832pt x 433.62pt>
+File: imagesstar/0.7Rsun0.1Msunimg07500.png Graphic file (type png)
+<use imagesstar/0.7Rsun0.1Msunimg07500.png>
+Package pdftex.def Info: imagesstar/0.7Rsun0.1Msunimg07500.png  used on input line 100.
+(pdftex.def)             Requested size: 140.00572pt x 157.12202pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--103
+Underfull \hbox (badness 10000) in paragraph at lines 147--148
 
  []
 
-[3] [4] (annex.aux)
+[3] [4 <./imagesstar/RsunMsunimg07550.png> <./imagesstar/0.7RsunMsunimg04700.png> <./imagesstar/0.3RsunMsunimg06200.png> <./imagesstar/Rsun0.5Msunimg06600.png> <./imagesstar/0.7Rsun0.5Msunimg05750.png> <./imagesstar/0.3Rsun0.5Msunimg03500.png> <./imagesstar/Rsun0.1Msunimg09950.png> <./imagesstar/0.7Rsun0.1Msunimg07500.png>] [5] (annex.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
@@ -382,20 +423,20 @@ Package rerunfilecheck Info: File `annex.out' has not changed.
 (rerunfilecheck)             Checksum: 65669FFDA8BE90F2731C04C5DDF61B71;743.
  ) 
 Here is how much of TeX's memory you used:
- 11248 strings out of 467690
- 180443 string characters out of 5415450
- 605077 words of memory out of 5000000
- 40179 multiletter control sequences out of 15000+600000
- 634281 words of font info for 63 fonts, out of 8000000 for 9000
+ 11311 strings out of 467690
+ 182884 string characters out of 5415450
+ 605108 words of memory out of 5000000
+ 40240 multiletter control sequences out of 15000+600000
+ 634581 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 75i,12n,79p,922b,452s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 75i,12n,79p,978b,454s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 pdfTeX warning (dest): name{https://github.com/AlbanSMA/CompAstro2_Projec1} has been referenced but does not exist, replaced by a fixed one
 
-<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on annex.pdf (4 pages, 165298 bytes).
+<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb>
+Output written on annex.pdf (5 pages, 1525349 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 14 named destinations out of 1000 (max. 500000)
- 57 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 170 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 145 words of extra memory for PDF output out of 10000 (max. 10000000)
 

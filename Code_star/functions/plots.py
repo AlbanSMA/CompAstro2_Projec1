@@ -4,7 +4,7 @@ def ini_plots(p, rho, Rstar, path, n_grid):
     f, (ax1, ax2) = plt.subplots(1,2, figsize=(22,6))
 
     # Plot star
-    d0, = ax1.plot(p[0,:]/Rstar, p[1,:]/Rstar, 'o', color='orangered', ms=1.7, alpha=0.35, linewidth=0, mew=0)
+    d0, = ax1.plot(p[0,:]/Rstar, p[1,:]/Rstar, 'o', color='orangered', ms=1.5, alpha=0.35, linewidth=0, mew=0)
     d1 = ax2.imshow(rho, cmap="magma")
 
     # plot labels
@@ -17,8 +17,8 @@ def ini_plots(p, rho, Rstar, path, n_grid):
     ax2.set_title("t_step={0}".format(0))
 
     # set lim
-    ax1.set_ylim(-3, 3)
-    ax1.set_xlim(-3, 3)
+    ax1.set_xlim(-0.5, 0.5)
+    ax1.set_ylim(-0.5, 0.5)
 
     ax2.set_ylim(0, n_grid-1)
     ax2.set_xlim(0, n_grid-1)
@@ -28,8 +28,7 @@ def ini_plots(p, rho, Rstar, path, n_grid):
 
     f.colorbar(d1, label="Density")
 
-
-    f.savefig(path+"nbody_output/img{0:05d}.png".format(0), dpi=300)
+    f.savefig(path+"/img{0:05d}.png".format(0), dpi=300)
     return f, ax1, ax2, d0, d1
 
 
@@ -51,4 +50,4 @@ def update_plots(d0, d1, p, rho, k, Rstar, f, ax1, ax2, path):
     f.canvas.flush_events()
 
     # save image from the simulation to your drive as pdf
-    f.savefig(path+"nbody_output/img{0:05d}.png".format(k), dpi=300)
+    f.savefig(path+"/img{0:05d}.png".format(k), dpi=300)

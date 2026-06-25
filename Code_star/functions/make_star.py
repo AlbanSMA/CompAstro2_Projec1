@@ -20,12 +20,14 @@ def mkStarD(n_particle, R, M, n_dim):
 
     #Position
         #create a gaussian spread of particle around the center at random angles
-    r = np.random.normal(0, R, n_particle)
+    r = np.random.normal(0, 0.8*R, n_particle)
     theta = np.random.uniform(0, 2*np.pi, n_particle)
+
 
         #change the coordinates
     p[0,:] = r*np.cos(theta)
     p[1,:] = r*np.sin(theta)
+
 
     #Mass particles
     mp[:] = M/n_particle

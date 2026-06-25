@@ -40,16 +40,15 @@ In this appendix, we will see how this model was implemented, then some results 
 \label{sec:imp}
 The largest part of the model was implemented in the same way as for the galactic flyby, with a main file calling multiple functions. The first created an N-body cloud, the second calculated an initial acceleration and density map, then the position, velocity, density map and acceleration were updated using a leapfrog algorithm in the third. The last function plotted the updated positions and density map after each time steps. 
 
-The running time was only improved by the use of array maths, and masks instead of if-statements. Numba could not be used as functions were being called within loops. However, the code ran quite fast without this, with a runtime of only %add runtime 
-for 2000 particles and a density resolution of $100 \times 100$. 
+The running time was only improved by the use of array maths, and masks instead of if-statements. Numba could not be used as functions were being called within loops. However, the code ran quite fast without this, with runtimes of at most a few hours for 2000 particles and a density resolution of $100 \times 100$. Simulations with a factor 10 less particles and half the resolution ran in less than an hour.
 
 \subsection{Equation of motion}
-As mentioned in the \nameref{sec:intro} and in the report, the equation of motion was composed of three parts: the gravitational acceleration, the pressure gradient and the viscosity.
+As mentioned in the \nameref{sec:intro} and in the main report, the equation of motion was composed of three parts: the gravitational acceleration, the pressure gradient and the viscosity.
 
 $$\frac{d\vec{v}}{dt} = \vec{g} - \nabla P - \nu \vec{v}$$
 
 \noindent Where $\vec{g}$ is simply the acceleration obtained from Newton's law and the law of gravitational attraction:
-$$\vec{F} = m\vec{a} = G\frac{m_j\cdot m_i}{r^3}$$
+$$\vec{F} = m\vec{a} = G\frac{m_j\cdot m_i}{r_{ji}^3}$$
 
 \noindent It was implemented as such in the model:
 $$\vec{a_{j}} = G \sum_{i \neq j} \frac{m_i}{r^3_{ji}}\vec{r_{ij}}.$$
@@ -86,17 +85,63 @@ Finally, the viscosity is simply the velocity multiplied by a constant. The valu
 
 \section{Results}
 \label{sec:res}
-%could change viscosit
-%could change clip distance
-%could change particle number
-%change total mass/radius
+
+A large set of simulations were run, with varying radius and mass, which in turn also varied the smoothing factor as it is directly dependent on the radius of the star. It also modified the minimum value the distance between particles could take within the equation for the gravitational acceleration as this was taken as $0.1 R_{star}$. In total, 13 simulations were run, which are summarised in \nameref{sec:AppA}. The masses taken ranged from $0.1 M_\odot$ to $M_\odot$, and the radii from $0.1 R_\odot$ to $R_\odot$. In addition, one simulation was run with $R_\odot$ and $M_\odot$ but a smoothing factor of $0.1 R_{star}$ instead of $0.02 R_{star}$. As the simulations were sometimes paused, it is not possible to accurately estimate their runtime, but the maximum time recorded was of 7h, with a large break of unknown time taken during it.
+
+\begin{figure}
+  \centering
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/RsunMsunimg07550.png}
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/0.7RsunMsunimg04700.png}
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/0.3RsunMsunimg06200.png}
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/Rsun0.5Msunimg06600.png}
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/0.7Rsun0.5Msunimg05750.png}
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/0.3Rsun0.5Msunimg03500.png}
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/Rsun0.1Msunimg09950.png}
+  \includegraphics[trim={2cm 0 17cm 0}, clip, width=0.32\textwidth]{imagesstar/0.7Rsun0.1Msunimg07500.png}
+  \caption{}
+  \label{fig:finressize}
+\end{figure}
+
+A first point of interest is that for a same mass, stars of decreasing radius appeared larger in the plots (see fig. \ref{fig:finressize}). These are simulations for stars of the mass of the Sun, and radii of $R_\odot$ (left), $0.7  R_\odot$ (middle) and $0.3 R_\odot$ (right). While it was run, the simulation of the same mass with a radius of $0.1 R_\odot$ is not shown here because the particles were ejected within 50 time steps as they formed too close to each others.
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1 and R1 = Sun, get results in folder, MsunRsun
+  %898.74
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1= MSun and R1 = 0.7*RSun, get results in folder Msun0.7Rsun
+  %418.06
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1= MSun and R1 = 0.3*RSun, get results in folder Msun0.3Rsun
+  %190.5
+
+%w/ 2000 particles, h=0.02*Rstar, kappa=0.5e-2, visc = 2e-3, and M1= MSun and R1 = 0.1*RSun, get results in folder Msun0.1Rsun
+  %246.5
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = Rsun, get results in folder 0.5MsunRsun
+  %?
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = 0.7 Rsun, get results in folder 0.5Msun0.7Rsun
+  %162.3
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = 0.3 Rsun, get results in folder 0.5Msun0.3Rsun
+  %107.55
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.5 Msun and R1 = 0.1 Rsun, get results in folder 0.5Msun0.1Rsun
+  %4.4
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.1 Msun and R1 = Rsun, get results in folder 0.1MsunRsun
+  %567.4
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.1 Msun and R1 = 0.7 Rsun, get results in folder 0.1Msun0.7Rsun
+  %163.5
+
+%w/ 2000 particles h=0.02*Rstar, kappa=0.5e-2, visc=2e-3, and M1 = 0.1 Msun and R1 = 0.3 Rsun, get results in folder 0.1Msun0.3Rsun
 
 \section{Discussion}
 \label{sec:disc}
 %add something on the simulations
 While this model accurately represents a cloud of particle falling into a sphere, there are a few elements missing to model the formation of a star. In particular, effects linked to changes in temperature. As we are using an isothermal equation of state, this model is entirely independent of heat, which is not an accurate representation. Jean's mass, which is the mass a molecular cloud needs to reach to collapse is dependent on both density and temperature. We are also not including radiation pressure, which would push particles away from each others. This model could represent a planet collapsing just as well as a star. Magneto-hydrodynamics are also missing. As stellar formation discs and young stars have very powerful magnetic fields, this could also influence their formation. 
 
-It is also a closed box model, no particles can enter, and none can escape due to another object. Stars form in groups with other stars and not alone, within molecular clouds. Not all particles present at t=0 will fall into this star, and new particles could enter after the initial collapse due to some adjacent event.\newline
+It is also a closed box model, no particles can enter, and none can escape due to another object. Stars form in groups with other stars and not alone, within molecular clouds. Not all particles present at $t=0$ will fall into this star, and new particles could enter after the initial collapse due to some adjacent event.\newline
 
 
 This is still a reasonably accurate model to represent the way gravitational collapse happen, and the alternance of contractions and expansions which lead to stellar formation. It is however missing a few phenomena to represent a star and not any body forming from a group of particles.\newline
@@ -125,13 +170,9 @@ This is still a reasonably accurate model to represent the way gravitational col
  \hline\hline
  \multicolumn{2}{|c|}{Simulations}\\
  \hline\hline
- \multicolumn{2}{|c|}{1 - Extremely Low Mass galaxy}\\
- \hline
- Star 1 & \\
- \hline
  $N_1$ & 2000\\
- $M_1$ & $M_\odot$\\
- $R_1$ & $0.3\cdot R_\odot$\\
+ $M_1$ ($M_\odot$) & 0.1, 0.5, 1\\
+ $R_1$ ($R_\odot$) & 0.1, 0.3, 0.7, 1\\
  \hline
  $\kappa$ & $10^{-2}$\\
  $\nu$ & $2\cdot10^{-3}$\\
