@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.21)  25 JUN 2026 16:13
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (MiKTeX 26.2) (preloaded format=pdflatex 2026.4.21)  25 JUN 2026 22:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -639,232 +639,254 @@ Package caption Info: End \AtBeginDocument code.
 [1
 
 {C:/Users/User/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 134--135
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 145--146
+Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
 [3]
-<images/img00133.png, id=72, 433.62pt x 433.62pt>
-File: images/img00133.png Graphic file (type png)
-<use images/img00133.png>
-Package pdftex.def Info: images/img00133.png  used on input line 149.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00180.png, id=74, 433.62pt x 433.62pt>
-File: images/img00180.png Graphic file (type png)
-<use images/img00180.png>
-Package pdftex.def Info: images/img00180.png  used on input line 150.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00293.png, id=75, 433.62pt x 433.62pt>
-File: images/img00293.png Graphic file (type png)
-<use images/img00293.png>
-Package pdftex.def Info: images/img00293.png  used on input line 151.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00119.png, id=77, 433.62pt x 433.62pt>
-File: images/img00119.png Graphic file (type png)
-<use images/img00119.png>
-Package pdftex.def Info: images/img00119.png  used on input line 160.
-(pdftex.def)             Requested size: 95.5001pt x 95.49594pt.
-<images/img00139.png, id=78, 433.62pt x 433.62pt>
-File: images/img00139.png Graphic file (type png)
-<use images/img00139.png>
-Package pdftex.def Info: images/img00139.png  used on input line 161.
-(pdftex.def)             Requested size: 95.5001pt x 95.49594pt.
-<images/img00164.png, id=79, 433.62pt x 433.62pt>
-File: images/img00164.png Graphic file (type png)
-<use images/img00164.png>
-Package pdftex.def Info: images/img00164.png  used on input line 162.
-(pdftex.def)             Requested size: 95.5001pt x 95.49594pt.
-<images/img00278.png, id=80, 433.62pt x 433.62pt>
-File: images/img00278.png Graphic file (type png)
-<use images/img00278.png>
-Package pdftex.def Info: images/img00278.png  used on input line 163.
-(pdftex.def)             Requested size: 95.5001pt x 95.49594pt.
-<images/img00107.png, id=82, 433.62pt x 433.62pt>
-File: images/img00107.png Graphic file (type png)
-<use images/img00107.png>
-Package pdftex.def Info: images/img00107.png  used on input line 172.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00134.png, id=83, 433.62pt x 433.62pt>
-File: images/img00134.png Graphic file (type png)
-<use images/img00134.png>
-Package pdftex.def Info: images/img00134.png  used on input line 173.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00260.png, id=84, 433.62pt x 433.62pt>
-File: images/img00260.png Graphic file (type png)
-<use images/img00260.png>
-Package pdftex.def Info: images/img00260.png  used on input line 174.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00315.png, id=85, 433.62pt x 433.62pt>
-File: images/img00315.png Graphic file (type png)
-<use images/img00315.png>
-Package pdftex.def Info: images/img00315.png  used on input line 175.
-(pdftex.def)             Requested size: 214.87708pt x 214.87744pt.
-<images/img00469.png, id=86, 433.62pt x 433.62pt>
-File: images/img00469.png Graphic file (type png)
-<use images/img00469.png>
-Package pdftex.def Info: images/img00469.png  used on input line 176.
-(pdftex.def)             Requested size: 214.87708pt x 214.87744pt.
- [4 <./images/img00133.png> <./images/img00180.png> <./images/img00293.png> <./images/img00119.png> <./images/img00139.png> <./images/img00164.png> <./images/img00278.png>]
-<images/img00109.png, id=103, 433.62pt x 433.62pt>
-File: images/img00109.png Graphic file (type png)
-<use images/img00109.png>
-Package pdftex.def Info: images/img00109.png  used on input line 185.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00117.png, id=104, 433.62pt x 433.62pt>
-File: images/img00117.png Graphic file (type png)
-<use images/img00117.png>
-Package pdftex.def Info: images/img00117.png  used on input line 186.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00124.png, id=105, 433.62pt x 433.62pt>
-File: images/img00124.png Graphic file (type png)
-<use images/img00124.png>
-Package pdftex.def Info: images/img00124.png  used on input line 187.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00143.png, id=106, 433.62pt x 433.62pt>
-File: images/img00143.png Graphic file (type png)
-<use images/img00143.png>
-Package pdftex.def Info: images/img00143.png  used on input line 188.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00167.png, id=107, 433.62pt x 433.62pt>
-File: images/img00167.png Graphic file (type png)
-<use images/img00167.png>
-Package pdftex.def Info: images/img00167.png  used on input line 189.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
-<images/img00282.png, id=108, 433.62pt x 433.62pt>
-File: images/img00282.png Graphic file (type png)
-<use images/img00282.png>
-Package pdftex.def Info: images/img00282.png  used on input line 190.
-(pdftex.def)             Requested size: 143.25381pt x 143.25383pt.
- [5 <./images/img00107.png> <./images/img00134.png> <./images/img00260.png> <./images/img00315.png> <./images/img00469.png>]
-<imagesstar/singleevol/img00050.png, id=122, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+Underfull \hbox (badness 10000) in paragraph at lines 144--145
+
+ []
+
+<imagesgal/extlowmassimg00060.png, id=78, 433.62pt x 433.62pt>
+File: imagesgal/extlowmassimg00060.png Graphic file (type png)
+<use imagesgal/extlowmassimg00060.png>
+Package pdftex.def Info: imagesgal/extlowmassimg00060.png  used on input line 148.
+(pdftex.def)             Requested size: 114.6045pt x 114.60439pt.
+<imagesgal/extlowmassimg00133.png, id=80, 433.62pt x 433.62pt>
+File: imagesgal/extlowmassimg00133.png Graphic file (type png)
+<use imagesgal/extlowmassimg00133.png>
+Package pdftex.def Info: imagesgal/extlowmassimg00133.png  used on input line 149.
+(pdftex.def)             Requested size: 114.6045pt x 114.60439pt.
+<imagesgal/extlowmassimg00180.png, id=81, 433.62pt x 433.62pt>
+File: imagesgal/extlowmassimg00180.png Graphic file (type png)
+<use imagesgal/extlowmassimg00180.png>
+Package pdftex.def Info: imagesgal/extlowmassimg00180.png  used on input line 150.
+(pdftex.def)             Requested size: 114.6045pt x 114.60439pt.
+<imagesgal/extlowmassimg00293.png, id=82, 433.62pt x 433.62pt>
+File: imagesgal/extlowmassimg00293.png Graphic file (type png)
+<use imagesgal/extlowmassimg00293.png>
+Package pdftex.def Info: imagesgal/extlowmassimg00293.png  used on input line 151.
+(pdftex.def)             Requested size: 114.6045pt x 114.60439pt.
+<imagesgal/lowmassimg00045.png, id=84, 433.62pt x 433.62pt>
+File: imagesgal/lowmassimg00045.png Graphic file (type png)
+<use imagesgal/lowmassimg00045.png>
+Package pdftex.def Info: imagesgal/lowmassimg00045.png  used on input line 160.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/lowmassimg00119.png, id=85, 433.62pt x 433.62pt>
+File: imagesgal/lowmassimg00119.png Graphic file (type png)
+<use imagesgal/lowmassimg00119.png>
+Package pdftex.def Info: imagesgal/lowmassimg00119.png  used on input line 161.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/lowmassimg00139.png, id=86, 433.62pt x 433.62pt>
+File: imagesgal/lowmassimg00139.png Graphic file (type png)
+<use imagesgal/lowmassimg00139.png>
+Package pdftex.def Info: imagesgal/lowmassimg00139.png  used on input line 162.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/lowmassimg00164.png, id=87, 433.62pt x 433.62pt>
+File: imagesgal/lowmassimg00164.png Graphic file (type png)
+<use imagesgal/lowmassimg00164.png>
+Package pdftex.def Info: imagesgal/lowmassimg00164.png  used on input line 163.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/lowmassimg00278.png, id=88, 433.62pt x 433.62pt>
+File: imagesgal/lowmassimg00278.png Graphic file (type png)
+<use imagesgal/lowmassimg00278.png>
+Package pdftex.def Info: imagesgal/lowmassimg00278.png  used on input line 164.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+[4 <./imagesgal/extlowmassimg00060.png> <./imagesgal/extlowmassimg00133.png> <./imagesgal/extlowmassimg00180.png> <./imagesgal/extlowmassimg00293.png>]
+<imagesgal/highmassimg00025.png, id=100, 433.62pt x 433.62pt>
+File: imagesgal/highmassimg00025.png Graphic file (type png)
+<use imagesgal/highmassimg00025.png>
+Package pdftex.def Info: imagesgal/highmassimg00025.png  used on input line 173.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/highmassimg00107.png, id=101, 433.62pt x 433.62pt>
+File: imagesgal/highmassimg00107.png Graphic file (type png)
+<use imagesgal/highmassimg00107.png>
+Package pdftex.def Info: imagesgal/highmassimg00107.png  used on input line 174.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/highmassimg00134.png, id=102, 433.62pt x 433.62pt>
+File: imagesgal/highmassimg00134.png Graphic file (type png)
+<use imagesgal/highmassimg00134.png>
+Package pdftex.def Info: imagesgal/highmassimg00134.png  used on input line 175.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/highmassimg00260.png, id=103, 433.62pt x 433.62pt>
+File: imagesgal/highmassimg00260.png Graphic file (type png)
+<use imagesgal/highmassimg00260.png>
+Package pdftex.def Info: imagesgal/highmassimg00260.png  used on input line 176.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/highmassimg00315.png, id=104, 433.62pt x 433.62pt>
+File: imagesgal/highmassimg00315.png Graphic file (type png)
+<use imagesgal/highmassimg00315.png>
+Package pdftex.def Info: imagesgal/highmassimg00315.png  used on input line 177.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/highmassimg00469.png, id=105, 433.62pt x 433.62pt>
+File: imagesgal/highmassimg00469.png Graphic file (type png)
+<use imagesgal/highmassimg00469.png>
+Package pdftex.def Info: imagesgal/highmassimg00469.png  used on input line 178.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/nooffsetimg00040.png, id=107, 433.62pt x 433.62pt>
+File: imagesgal/nooffsetimg00040.png Graphic file (type png)
+<use imagesgal/nooffsetimg00040.png>
+Package pdftex.def Info: imagesgal/nooffsetimg00040.png  used on input line 187.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/nooffsetimg00109.png, id=108, 433.62pt x 433.62pt>
+File: imagesgal/nooffsetimg00109.png Graphic file (type png)
+<use imagesgal/nooffsetimg00109.png>
+Package pdftex.def Info: imagesgal/nooffsetimg00109.png  used on input line 188.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/nooffsetimg00117.png, id=109, 433.62pt x 433.62pt>
+File: imagesgal/nooffsetimg00117.png Graphic file (type png)
+<use imagesgal/nooffsetimg00117.png>
+Package pdftex.def Info: imagesgal/nooffsetimg00117.png  used on input line 189.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/nooffsetimg00124.png, id=110, 433.62pt x 433.62pt>
+File: imagesgal/nooffsetimg00124.png Graphic file (type png)
+<use imagesgal/nooffsetimg00124.png>
+Package pdftex.def Info: imagesgal/nooffsetimg00124.png  used on input line 190.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/nooffsetimg00143.png, id=111, 433.62pt x 433.62pt>
+File: imagesgal/nooffsetimg00143.png Graphic file (type png)
+<use imagesgal/nooffsetimg00143.png>
+Package pdftex.def Info: imagesgal/nooffsetimg00143.png  used on input line 191.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+<imagesgal/nooffsetimg00282.png, id=112, 433.62pt x 433.62pt>
+File: imagesgal/nooffsetimg00282.png Graphic file (type png)
+<use imagesgal/nooffsetimg00282.png>
+Package pdftex.def Info: imagesgal/nooffsetimg00282.png  used on input line 192.
+(pdftex.def)             Requested size: 152.80602pt x 152.80806pt.
+ [5 <./imagesgal/lowmassimg00045.png> <./imagesgal/lowmassimg00119.png> <./imagesgal/lowmassimg00139.png> <./imagesgal/lowmassimg00164.png> <./imagesgal/lowmassimg00278.png>] [6 <./imagesgal/highmassimg00025.png> <./imagesgal/highmassimg00107.png> <./imagesgal/highmassimg00134.png> <./imagesgal/highmassimg00260.png> <./imagesgal/highmassimg00315.png> <./imagesgal/highmassimg00469.png> <./imagesgal/nooffsetimg00040.png> <./imagesgal/nooffsetimg00109.png> <./imagesgal/nooffsetimg00117.png> <./imagesgal/nooffsetimg00124.png> <./imagesgal/nooffsetimg00143.png> <./imagesgal/nooffsetimg00282.png>]
+<imagesstar/singleevol/img00050.png, id=143, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/singleevol/img00050.png Graphic file (type png)
 <use imagesstar/singleevol/img00050.png>
-Package pdftex.def Info: imagesstar/singleevol/img00050.png  used on input line 203.
+Package pdftex.def Info: imagesstar/singleevol/img00050.png  used on input line 204.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/singleevol/img00300.png, id=124, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/singleevol/img00300.png, id=145, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/singleevol/img00300.png Graphic file (type png)
 <use imagesstar/singleevol/img00300.png>
-Package pdftex.def Info: imagesstar/singleevol/img00300.png  used on input line 204.
+Package pdftex.def Info: imagesstar/singleevol/img00300.png  used on input line 205.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/singleevol/img00900.png, id=126, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/singleevol/img00900.png, id=147, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/singleevol/img00900.png Graphic file (type png)
 <use imagesstar/singleevol/img00900.png>
-Package pdftex.def Info: imagesstar/singleevol/img00900.png  used on input line 205.
+Package pdftex.def Info: imagesstar/singleevol/img00900.png  used on input line 206.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/singleevol/img01600.png, id=128, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/singleevol/img01600.png, id=149, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/singleevol/img01600.png Graphic file (type png)
 <use imagesstar/singleevol/img01600.png>
-Package pdftex.def Info: imagesstar/singleevol/img01600.png  used on input line 206.
-(pdftex.def)             Requested size: 224.42928pt x 227.84435pt.
-<imagesstar/singleevol/img06200.png, id=130, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+Package pdftex.def Info: imagesstar/singleevol/img01600.png  used on input line 207.
+(pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
+<imagesstar/singleevol/img06200.png, id=151, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/singleevol/img06200.png Graphic file (type png)
 <use imagesstar/singleevol/img06200.png>
-Package pdftex.def Info: imagesstar/singleevol/img06200.png  used on input line 207.
-(pdftex.def)             Requested size: 224.42928pt x 227.84435pt.
-
-Underfull \hbox (badness 2368) in paragraph at lines 203--208
-[][] [] []
- []
-
-<imagesstar/RsunMsunimg07550.png, id=132, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+Package pdftex.def Info: imagesstar/singleevol/img06200.png  used on input line 208.
+(pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
+<imagesstar/singleevol/0.3RsunMsunDensityVtime.pdf, id=153, 367.07564pt x 338.33276pt>
+File: imagesstar/singleevol/0.3RsunMsunDensityVtime.pdf Graphic file (type pdf)
+<use imagesstar/singleevol/0.3RsunMsunDensityVtime.pdf>
+Package pdftex.def Info: imagesstar/singleevol/0.3RsunMsunDensityVtime.pdf  used on input line 215.
+(pdftex.def)             Requested size: 358.1309pt x 330.09767pt.
+File: imagesstar/singleevol/img06200.png Graphic file (type png)
+<use imagesstar/singleevol/img06200.png>
+Package pdftex.def Info: imagesstar/singleevol/img06200.png  used on input line 224.
+(pdftex.def)             Requested size: 477.50787pt x 223.36641pt.
+<imagesstar/diffhimg03000.png, id=157, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+File: imagesstar/diffhimg03000.png Graphic file (type png)
+<use imagesstar/diffhimg03000.png>
+Package pdftex.def Info: imagesstar/diffhimg03000.png  used on input line 225.
+(pdftex.def)             Requested size: 477.50787pt x 223.36641pt.
+<imagesstar/RsunMsunimg07550.png, id=159, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/RsunMsunimg07550.png Graphic file (type png)
 <use imagesstar/RsunMsunimg07550.png>
-Package pdftex.def Info: imagesstar/RsunMsunimg07550.png  used on input line 214.
+Package pdftex.def Info: imagesstar/RsunMsunimg07550.png  used on input line 234.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/0.7RsunMsunimg04700.png, id=134, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/0.7RsunMsunimg04700.png, id=161, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/0.7RsunMsunimg04700.png Graphic file (type png)
 <use imagesstar/0.7RsunMsunimg04700.png>
-Package pdftex.def Info: imagesstar/0.7RsunMsunimg04700.png  used on input line 215.
+Package pdftex.def Info: imagesstar/0.7RsunMsunimg04700.png  used on input line 235.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/0.3RsunMsunimg03950.png, id=136, decode=[-1.5 1 -1.5 1 -1.5 1], 926.9832pt x 433.62pt>
-File: imagesstar/0.3RsunMsunimg03950.png Graphic file (type png)
-<use imagesstar/0.3RsunMsunimg03950.png>
-Package pdftex.def Info: imagesstar/0.3RsunMsunimg03950.png  used on input line 216.
+<imagesstar/0.3RsunMsunimg01950.png, id=163, decode=[-1.5 1 -1.5 1 -1.5 1], 926.9832pt x 433.62pt>
+File: imagesstar/0.3RsunMsunimg01950.png Graphic file (type png)
+<use imagesstar/0.3RsunMsunimg01950.png>
+Package pdftex.def Info: imagesstar/0.3RsunMsunimg01950.png  used on input line 236.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/Rsun0.5Msunimg06600.png, id=138, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/Rsun0.5Msunimg06600.png, id=165, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/Rsun0.5Msunimg06600.png Graphic file (type png)
 <use imagesstar/Rsun0.5Msunimg06600.png>
-Package pdftex.def Info: imagesstar/Rsun0.5Msunimg06600.png  used on input line 217.
+Package pdftex.def Info: imagesstar/Rsun0.5Msunimg06600.png  used on input line 237.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/0.7Rsun0.5Msunimg05750.png, id=140, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/0.7Rsun0.5Msunimg05750.png, id=167, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/0.7Rsun0.5Msunimg05750.png Graphic file (type png)
 <use imagesstar/0.7Rsun0.5Msunimg05750.png>
-Package pdftex.def Info: imagesstar/0.7Rsun0.5Msunimg05750.png  used on input line 218.
+Package pdftex.def Info: imagesstar/0.7Rsun0.5Msunimg05750.png  used on input line 238.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/0.3Rsun0.5Msunimg03500.png, id=142, decode=[-1.5 1 -1.5 1 -1.5 1], 926.9832pt x 433.62pt>
+<imagesstar/0.3Rsun0.5Msunimg03500.png, id=169, decode=[-1.5 1 -1.5 1 -1.5 1], 926.9832pt x 433.62pt>
 File: imagesstar/0.3Rsun0.5Msunimg03500.png Graphic file (type png)
 <use imagesstar/0.3Rsun0.5Msunimg03500.png>
-Package pdftex.def Info: imagesstar/0.3Rsun0.5Msunimg03500.png  used on input line 219.
+Package pdftex.def Info: imagesstar/0.3Rsun0.5Msunimg03500.png  used on input line 239.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/Rsun0.1Msunimg09950.png, id=144, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/Rsun0.1Msunimg09950.png, id=171, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/Rsun0.1Msunimg09950.png Graphic file (type png)
 <use imagesstar/Rsun0.1Msunimg09950.png>
-Package pdftex.def Info: imagesstar/Rsun0.1Msunimg09950.png  used on input line 220.
+Package pdftex.def Info: imagesstar/Rsun0.1Msunimg09950.png  used on input line 240.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/0.7Rsun0.1Msunimg07500.png, id=146, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
+<imagesstar/0.7Rsun0.1Msunimg07500.png, id=173, decode=[-1 1 -1 1 -1 1], 926.9832pt x 433.62pt>
 File: imagesstar/0.7Rsun0.1Msunimg07500.png Graphic file (type png)
 <use imagesstar/0.7Rsun0.1Msunimg07500.png>
-Package pdftex.def Info: imagesstar/0.7Rsun0.1Msunimg07500.png  used on input line 221.
+Package pdftex.def Info: imagesstar/0.7Rsun0.1Msunimg07500.png  used on input line 241.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-<imagesstar/0.3Rsun0.1Msunimg05450.png, id=148, decode=[-1.5 1 -1.5 1 -1.5 1], 926.9832pt x 433.62pt>
+<imagesstar/0.3Rsun0.1Msunimg05450.png, id=175, decode=[-1.5 1 -1.5 1 -1.5 1], 926.9832pt x 433.62pt>
 File: imagesstar/0.3Rsun0.1Msunimg05450.png Graphic file (type png)
 <use imagesstar/0.3Rsun0.1Msunimg05450.png>
-Package pdftex.def Info: imagesstar/0.3Rsun0.1Msunimg05450.png  used on input line 222.
+Package pdftex.def Info: imagesstar/0.3Rsun0.1Msunimg05450.png  used on input line 242.
 (pdftex.def)             Requested size: 152.80602pt x 155.1309pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 278--279
-
- []
-
-[6 <./images/img00109.png> <./images/img00117.png> <./images/img00124.png> <./images/img00143.png> <./images/img00167.png> <./images/img00282.png>] [7 <./imagesstar/singleevol/img00050.png> <./imagesstar/singleevol/img00300.png> <./imagesstar/singleevol/img00900.png> <./imagesstar/singleevol/img01600.png> <./imagesstar/singleevol/img06200.png>] [8 <./imagesstar/RsunMsunimg07550.png> <./imagesstar/0.7RsunMsunimg04700.png> <./imagesstar/0.3RsunMsunimg03950.png> <./imagesstar/Rsun0.5Msunimg06600.png> <./imagesstar/0.7Rsun0.5Msunimg05750.png> <./imagesstar/0.3Rsun0.5Msunimg03500.png> <./imagesstar/Rsun0.1Msunimg09950.png> <./imagesstar/0.7Rsun0.1Msunimg07500.png> <./imagesstar/0.3Rsun0.1Msunimg05450.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 280--281
-
- []
-
-
+ [7 <./imagesstar/singleevol/img00050.png> <./imagesstar/singleevol/img00300.png> <./imagesstar/singleevol/img00900.png> <./imagesstar/singleevol/img01600.png> <./imagesstar/singleevol/img06200.png>] [8 <./imagesstar/singleevol/0.3RsunMsunDensityVtime.pdf>] [9 <./imagesstar/diffhimg03000.png>] [10 <./imagesstar/RsunMsunimg07550.png> <./imagesstar/0.7RsunMsunimg04700.png> <./imagesstar/0.3RsunMsunimg01950.png> <./imagesstar/Rsun0.5Msunimg06600.png> <./imagesstar/0.7Rsun0.5Msunimg05750.png> <./imagesstar/0.3Rsun0.5Msunimg03500.png> <./imagesstar/Rsun0.1Msunimg09950.png> <./imagesstar/0.7Rsun0.1Msunimg07500.png> <./imagesstar/0.3Rsun0.1Msunimg05450.png>]
+<imagesstar/accgraphs/MsunRsunAccVtime.pdf, id=270, 414.83543pt x 327.20317pt>
+File: imagesstar/accgraphs/MsunRsunAccVtime.pdf Graphic file (type pdf)
+<use imagesstar/accgraphs/MsunRsunAccVtime.pdf>
+Package pdftex.def Info: imagesstar/accgraphs/MsunRsunAccVtime.pdf  used on input line 254.
+(pdftex.def)             Requested size: 477.50787pt x 194.22086pt.
+<imagesstar/accgraphs/0.1MsunRsunAccVtime.pdf, id=272, 414.83543pt x 327.20317pt>
+File: imagesstar/accgraphs/0.1MsunRsunAccVtime.pdf Graphic file (type pdf)
+<use imagesstar/accgraphs/0.1MsunRsunAccVtime.pdf>
+Package pdftex.def Info: imagesstar/accgraphs/0.1MsunRsunAccVtime.pdf  used on input line 255.
+(pdftex.def)             Requested size: 477.50787pt x 194.22086pt.
+<imagesstar/twocentresDensityVtime.pdf, id=275, 382.95158pt x 338.33276pt>
+File: imagesstar/twocentresDensityVtime.pdf Graphic file (type pdf)
+<use imagesstar/twocentresDensityVtime.pdf>
+Package pdftex.def Info: imagesstar/twocentresDensityVtime.pdf  used on input line 264.
+(pdftex.def)             Requested size: 477.50787pt x 421.88239pt.
+ [11] [12 <./imagesstar/accgraphs/MsunRsunAccVtime.pdf> <./imagesstar/accgraphs/0.1MsunRsunAccVtime.pdf>] [13 <./imagesstar/twocentresDensityVtime.pdf>]
 Underfull \hbox (badness 10000) in paragraph at lines 282--283
 
  []
 
+[14] [15]
 
-Underfull \hbox (badness 10000) in paragraph at lines 284--285
+LaTeX Warning: Text page 16 contains only floats.
 
- []
-
-
-LaTeX Warning: Empty bibliography on input line 288.
-
-[9] [10] [11] (Report.aux)
+[16] (Report.aux)
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-03-20>
  ***********
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 66E97683860BDAF176DB81BA69A1F462;1200.
+(rerunfilecheck)             Checksum: B5920E17C688581D746E88F993307FCA;1567.
 Package logreq Info: Writing requests to 'Report.run.xml'.
 \openout1 = `Report.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 19296 strings out of 467690
- 348028 string characters out of 5415450
- 1306521 words of memory out of 5000000
- 48143 multiletter control sequences out of 15000+600000
- 634750 words of font info for 65 fonts, out of 8000000 for 9000
+ 19371 strings out of 467690
+ 352206 string characters out of 5415450
+ 1311581 words of memory out of 5000000
+ 48208 multiletter control sequences out of 15000+600000
+ 635590 words of font info for 68 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 63i,12n,67p,1253b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
-
-pdfTeX warning (dest): name{https://github.com/AlbanSMA/CompAstro2_Projec1} has been referenced but does not exist, replaced by a fixed one
-
-<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
-Output written on Report.pdf (11 pages, 3757732 bytes).
+ 63i,12n,67p,2078b,5052s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/User/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb>
+Output written on Report.pdf (16 pages, 4164052 bytes).
 PDF statistics:
- 289 PDF objects out of 1000 (max. 8388607)
- 32 named destinations out of 1000 (max. 500000)
- 325 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 507 PDF objects out of 1000 (max. 8388607)
+ 42 named destinations out of 1000 (max. 500000)
+ 385 words of extra memory for PDF output out of 10000 (max. 10000000)
 
